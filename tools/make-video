@@ -1,0 +1,116 @@
+#!/usr/bin/env python3
+"""make-video: build a 1080p MP4 slideshow (score pages + MP3) for a piece.
+
+Usage: make-video [--force] [--fps N] [--dpi N] <slug | pieces/<slug>>
+
+Page changes are timed from MuseScore's measure-position export (<slug>.mpos):
+each page appears when its first measure starts playing (repeats are followed).
+Falls back to equal shares of the audio length if timing is unavailable.
+Output: pieces/<slug>/exports/<slug>.mp4 (git-ignored).
+"""
+import argparse, os, re, shutil, subprocess, sys, tempfile, xml.etree.ElementTree as ET
+from pathlib import Path
+
+REPO = Path(os.environ.get("SCORES_REPO", Path.home() / "Documents/music/scores"))
+MSCORE = os.environ.get("MUSESCORE_BIN", str(Path.home() / ".local/bin/musescore"))
+FFMPEG = os.environ.get("FFMPEG_BIN") or shutil.which("ffmpeg") or "/snap/bin/ffmpeg"
+FFPROBE = os.environ.get("FFPROBE_BIN") or shutil.which("ffprobe") or shutil.which("ffmpeg.ffprobe") or "/snap/bin/ffmpeg.ffprobe"
+# snap-confined ffmpeg cannot see /tmp or hidden dirs in $HOME, so scratch files
+# live in a git-ignored, non-hidden folder inside the repo
+SCRATCH_ROOT = REPO / "_scratch"
+
+def crashpads():
+    out = subprocess.run(["pgrep", "-u", os.environ.get("USER", ""), "-f", r"/tmp/\.mount_.*crashpad_handler"],
+                         capture_output=True, text=True).stdout.split()
+    return set(out)
+
+def musescore(args, log):
+    before = crashpads()
+    env = dict(os.environ, QT_QPA_PLATFORM="offscreen")
+    rc = subprocess.run([MSCORE, *args], stdin=subprocess.DEVNULL, stdout=log, stderr=log, env=env, timeout=1200).returncode
+    for pid in crashpads() - before:   # AppImage leaves an orphaned crashpad_handler behind
+        subprocess.run(["kill", pid], stderr=subprocess.DEVNULL)
+    return rc
+
+def natural(p): return [int(t) if t.isdigit() else t for t in re.split(r"(\d+)", p.name)]
+
+def probe_duration(path):
+    out = subprocess.run([FFPROBE, "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(path)],
+                         stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True).stdout
+    m = re.search(r"\d+(\.\d+)?", out)
+    if not m: sys.exit(f"Could not read duration of {path}")
+    return float(m.group(0))
+
+def page_schedule(mpos, n_pages, duration):
+    """Return [(page_index0, start_seconds)] from an .mpos file, or None."""
+    try:
+        root = ET.parse(mpos).getroot()
+        page_of = {e.get("id"): int(e.get("page")) for e in root.iter("element")}
+        events = sorted((int(ev.get("position")), page_of[ev.get("elid")]) for ev in root.iter("event") if ev.get("elid") in page_of)
+    except Exception as e:
+        print(f"Could not use measure timings ({e}); using equal shares", file=sys.stderr); return None
+    sched = []
+    for pos_ms, page in events:
+        if page >= n_pages: continue
+        if not sched or sched[-1][0] != page:
+            sched.append((page, pos_ms / 1000.0))
+    if not sched: return None
+    sched[0] = (sched[0][0], 0.0)
+    return [s for s in sched if s[1] < duration]
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("piece"); ap.add_argument("--force", action="store_true")
+    ap.add_argument("--fps", type=float, default=2); ap.add_argument("--dpi", type=int, default=150)
+    a = ap.parse_args()
+    slug = Path(a.piece).name if Path(a.piece).is_dir() else a.piece
+    d = REPO / "pieces" / slug; exp = d / "exports"
+    mscz, mp3, out = d / f"{slug}.mscz", exp / f"{slug}.mp3", exp / f"{slug}.mp4"
+    for f in (mscz, mp3):
+        if not f.exists(): sys.exit(f"Missing {f} (run publish-score first)")
+    if out.exists() and not a.force and out.stat().st_mtime > max(mscz.stat().st_mtime, mp3.stat().st_mtime):
+        print(f"Video up to date: {out}"); return
+    SCRATCH_ROOT.mkdir(parents=True, exist_ok=True)
+    tmp = Path(tempfile.mkdtemp(prefix=f"video-{slug}-", dir=SCRATCH_ROOT))
+    try:
+        with open(tmp / "musescore.log", "w") as log:
+            # high-res pages for the video (the repo PNGs are 100 dpi)
+            print(f"Rendering pages at {a.dpi} dpi ...")
+            musescore(["-r", str(a.dpi), "-o", str(tmp / f"{slug}.png"), str(mscz)], log)
+            pages = sorted(tmp.glob(f"{slug}-*.png"), key=natural) or sorted((exp / "png").glob("*.png"), key=natural)
+            if not pages: sys.exit("No page images available")
+            mpos = exp / f"{slug}.mpos"
+            if not mpos.exists() or mpos.stat().st_mtime < mscz.stat().st_mtime:
+                musescore(["-o", str(mpos), str(mscz)], log)
+        duration = probe_duration(mp3)
+        sched = page_schedule(mpos, len(pages), duration) if mpos.exists() else None
+        mode = "measure-timed"
+        if not sched:
+            share = duration / len(pages); sched = [(i, i * share) for i in range(len(pages))]; mode = "equal shares"
+        lines = []
+        for i, (page, start) in enumerate(sched):
+            end = sched[i + 1][1] if i + 1 < len(sched) else duration
+            lines += [f"file '{pages[page].name}'", f"duration {max(end - start, 0.05):.3f}"]
+        lines.append(f"file '{pages[sched[-1][0]].name}'")  # concat demuxer needs the last file repeated
+        (tmp / "list.txt").write_text("\n".join(lines) + "\n")
+        print(f"{len(pages)} pages, {len(sched)} page changes ({mode}), audio {duration:.1f}s")
+        vf = ("scale=1920:1080:force_original_aspect_ratio=decrease:flags=lanczos,"
+              "pad=1920:1080:(ow-iw)/2:(oh-ih)/2:color=white,format=yuv420p")
+        tmp_out = tmp / f"{slug}.mp4"
+        cmd = [FFMPEG, "-y", "-hide_banner", "-loglevel", "error",
+               "-f", "concat", "-safe", "0", "-i", str(tmp / "list.txt"), "-i", str(mp3),
+               # flatten transparent PNGs onto white before scaling
+               "-filter_complex", f"[0:v]split[a][b];[a]drawbox=c=white:t=fill[bg];[bg][b]overlay,{vf},fps={a.fps}[v]",
+               "-map", "[v]", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-tune", "stillimage",
+               "-crf", "20", "-r", str(a.fps), "-c:a", "aac", "-b:a", "192k", "-shortest",
+               "-movflags", "+faststart", str(tmp_out)]
+        r = subprocess.run(cmd, stderr=subprocess.PIPE, text=True)
+        if r.returncode != 0:
+            sys.exit("ffmpeg failed:\n" + "\n".join(l for l in r.stderr.splitlines() if not re.search(r"libGL|GLX|Serial|Request M", l)))
+        shutil.move(str(tmp_out), out)
+        print(f"Video: {out} ({out.stat().st_size / 1e6:.1f} MB, {probe_duration(out):.1f}s)")
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+if __name__ == "__main__":
+    main()

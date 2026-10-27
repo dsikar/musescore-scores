@@ -7,6 +7,8 @@
 #   --no-png         skip page PNG export
 #   --no-push        commit locally but don't push
 #   --sound-profile P  "MuseScore Basic" (default) or "MuseSounds"
+#   --video          also build pieces/<slug>/exports/<slug>.mp4 (not committed)
+#   --youtube        build the video and upload it to YouTube (unlisted)
 #   -h, --help       show this help
 # Env: SCORES_REPO (default ~/Documents/music/scores), MUSESCORE_BIN (default ~/.local/bin/musescore)
 set -euo pipefail
@@ -14,9 +16,9 @@ set -euo pipefail
 REPO="${SCORES_REPO:-$HOME/Documents/music/scores}"
 MSCORE="${MUSESCORE_BIN:-$HOME/.local/bin/musescore}"
 TIMEOUT="${MUSESCORE_TIMEOUT:-1200}"
-FORCE=0; PNG=1; PUSH=1; PROFILE=""
+FORCE=0; PNG=1; PUSH=1; PROFILE=""; VIDEO=0; YOUTUBE=0
 
-usage() { sed -n '2,11p' "$(readlink -f "$0")" | sed 's/^# \{0,1\}//'; }
+usage() { sed -n '2,13p' "$(readlink -f "$0")" | sed 's/^# \{0,1\}//'; }
 
 ARGS=()
 while [[ $# -gt 0 ]]; do
@@ -24,6 +26,8 @@ while [[ $# -gt 0 ]]; do
     --force) FORCE=1 ;;
     --no-png) PNG=0 ;;
     --no-push) PUSH=0 ;;
+    --video) VIDEO=1 ;;
+    --youtube) VIDEO=1; YOUTUBE=1 ;;
     --sound-profile) PROFILE="$2"; shift ;;
     -h|--help) usage; exit 0 ;;
     -*) echo "Unknown option: $1" >&2; usage >&2; exit 2 ;;
@@ -130,4 +134,12 @@ if [[ $PUSH -eq 1 ]] && git remote get-url origin >/dev/null 2>&1; then
   else
     echo "Already up to date with origin."
   fi
+fi
+
+# 5. optional video / YouTube
+if [[ $VIDEO -eq 1 ]]; then
+  "$REPO/tools/make-video" $([[ $FORCE -eq 1 ]] && echo --force) "$SLUG"
+fi
+if [[ $YOUTUBE -eq 1 ]]; then
+  "$REPO/tools/youtube-upload" $([[ $PUSH -eq 0 ]] && echo --no-push) "$SLUG"
 fi

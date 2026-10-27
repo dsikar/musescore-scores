@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Wrapper: run youtube_upload.py in its own venv (created on first use).
+set -euo pipefail
+VENV="${PUBLISH_SCORE_VENV:-$HOME/.local/share/publish-score/venv}"
+HERE="$(dirname "$(readlink -f "$0")")"
+if [[ ! -x "$VENV/bin/python" ]]; then
+  python3 -m venv "$VENV"
+  "$VENV/bin/pip" install -q google-api-python-client google-auth-oauthlib google-auth-httplib2
+fi
+exec env -u PYTHONPATH "$VENV/bin/python" "$HERE/youtube_upload.py" "$@"

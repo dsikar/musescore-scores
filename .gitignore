@@ -1,3 +1,14 @@
 .mscbackup/
 *.mscz~
 *.log
+
+# videos are uploaded to YouTube, not committed
+*.mp4
+_scratch/
+
+# never commit credentials
+client_secret*.json
+*token*.json
+*.pem
+*.key
+.env

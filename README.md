@@ -14,6 +14,8 @@ Scores written in MuseScore Studio, exported automatically by [`tools/publish-sc
 publish-score path/to/score.mscz [slug]
 ```
 
-Copies the score to `pieces/<slug>/`, exports PDF, MusicXML, MP3 and page PNGs with the MuseScore CLI (headless), regenerates this README and `index.html`, then commits and pushes. Re-running on an unchanged score does nothing. Options: `--force`, `--no-png`, `--no-push`, `--sound-profile "MuseScore Basic"|MuseSounds`.
+Copies the score to `pieces/<slug>/`, exports PDF, MusicXML, MP3 and page PNGs with the MuseScore CLI (headless), regenerates this README and `index.html`, then commits and pushes. Re-running on an unchanged score does nothing. Options: `--force`, `--no-png`, `--no-push`, `--sound-profile "MuseScore Basic"|MuseSounds`, `--video` (build an MP4 slideshow), `--youtube` (build the video and upload it unlisted).
+
+Videos: `make-video <slug>` writes `pieces/<slug>/exports/<slug>.mp4` (1080p, page turns timed from the score's measure positions; not committed). `youtube-upload [--privacy unlisted|private|public] <slug>` uploads it and adds the YouTube link here.
 
 Audio is rendered with MuseScore's built-in *MS Basic* soundfont (Muse Sounds is not installed for command-line rendering).

@@ -31,7 +31,10 @@ for d in sorted(p for p in pieces_dir.iterdir() if p.is_dir()) if pieces_dir.exi
     try: meta = json.loads((exp / "meta.json").read_text())
     except Exception: pass
     pngs = sorted((exp / "png").glob("*.png"), key=lambda p: [int(t) if t.isdigit() else t for t in re.split(r"(\d+)", p.name)]) if (exp / "png").exists() else []
-    pieces.append(dict(slug=slug, meta=meta, exp=exp, pngs=pngs,
+    yt = {}
+    try: yt = json.loads((exp / "youtube.json").read_text())
+    except Exception: pass
+    pieces.append(dict(slug=slug, meta=meta, yt=yt, exp=exp, pngs=pngs,
         files={k: exp / f"{slug}.{k}" for k in ("pdf", "musicxml", "mp3")}, mscz=d / f"{slug}.mscz"))
 
 rs = remote_slug()
@@ -55,13 +58,18 @@ for p in pieces:
         f"[pages]({rel(p['exp'] / 'png')})" if p["pngs"] else ""] if x)
     audio = f"[MP3]({rel(f['mp3'])}) ({mb(f['mp3'])})" if f["mp3"].exists() else ""
     if audio and pages_url: audio += f" · [▶ play]({pages_url}#{p['slug']})"
+    if p["yt"].get("url"): audio += f" · [YouTube]({p['yt']['url']})"
     src = f"[.mscz]({rel(p['mscz'])})" if p["mscz"].exists() else ""
     lines.append(f"| **{title}** `{p['slug']}` | {m.get('composer','')} | {fmt_dur(m.get('duration'))} | {score} | {audio} | {src} |")
 lines += ["", "## Publishing a score", "", "```", "publish-score path/to/score.mscz [slug]", "```", "",
           "Copies the score to `pieces/<slug>/`, exports PDF, MusicXML, MP3 and page PNGs with the "
           "MuseScore CLI (headless), regenerates this README and `index.html`, then commits and pushes. "
           "Re-running on an unchanged score does nothing. Options: `--force`, `--no-png`, `--no-push`, "
-          "`--sound-profile \"MuseScore Basic\"|MuseSounds`.", "",
+          "`--sound-profile \"MuseScore Basic\"|MuseSounds`, `--video` (build an MP4 slideshow), "
+          "`--youtube` (build the video and upload it unlisted).", "",
+          "Videos: `make-video <slug>` writes `pieces/<slug>/exports/<slug>.mp4` (1080p, page turns timed "
+          "from the score's measure positions; not committed). `youtube-upload [--privacy unlisted|private|public] <slug>` "
+          "uploads it and adds the YouTube link here.", "",
           "Audio is rendered with MuseScore's built-in *MS Basic* soundfont (Muse Sounds is not installed "
           "for command-line rendering).", ""]
 (repo / "README.md").write_text("\n".join(lines))
@@ -75,7 +83,8 @@ for p in pieces:
     links = " · ".join(x for x in [
         f'<a href="{e(rel(f["pdf"]))}">PDF score</a>' if f["pdf"].exists() else "",
         f'<a href="{e(rel(f["musicxml"]))}">MusicXML</a>' if f["musicxml"].exists() else "",
-        f'<a href="{e(rel(f["mp3"]))}" download>MP3</a>' if f["mp3"].exists() else ""] if x)
+        f'<a href="{e(rel(f["mp3"]))}" download>MP3</a>' if f["mp3"].exists() else "",
+        f'<a href="{e(p["yt"]["url"])}">YouTube video</a>' if p["yt"].get("url") else ""] if x)
     audio = f'<audio controls preload="none" src="{e(rel(f["mp3"]))}"></audio>' if f["mp3"].exists() else ""
     thumb = f'<a href="{e(rel(f["pdf"]))}"><img src="{e(rel(p["pngs"][0]))}" alt="first page" loading="lazy"></a>' if p["pngs"] else ""
     cards.append(f'<section id="{e(p["slug"])}"><h2>{e(title)}</h2><p class="sub">{e(sub)}</p>{audio}<p>{links}</p>{thumb}</section>')
