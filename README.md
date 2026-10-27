@@ -2,8 +2,11 @@
 
 Scores written in MuseScore Studio, exported automatically by [`tools/publish-score`](tools/publish-score): PDF score, MusicXML and an MP3 render.
 
+**Listen in the browser:** https://dsikar.github.io/musescore-scores/
+
 | Piece | Composer | Length | Score | Audio | Source |
 |---|---|---|---|---|---|
+| **Symphony No. 8 (in G major ∙ op. 88)** `dvorak-8-mvt-1` | Antonín Dvořák | 9:15 | [PDF](pieces/dvorak-8-mvt-1/exports/dvorak-8-mvt-1.pdf) · [MusicXML](pieces/dvorak-8-mvt-1/exports/dvorak-8-mvt-1.musicxml) · [pages](pieces/dvorak-8-mvt-1/exports/png) | [MP3](pieces/dvorak-8-mvt-1/exports/dvorak-8-mvt-1.mp3) (8.9 MB) · [▶ play](https://dsikar.github.io/musescore-scores/#dvorak-8-mvt-1) | [.mscz](pieces/dvorak-8-mvt-1/dvorak-8-mvt-1.mscz) |
 
 ## Publishing a score
 
