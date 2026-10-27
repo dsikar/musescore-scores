@@ -1,0 +1,4 @@
+# Large lossless audio goes to Git LFS. MP3s, scores and PDFs stay in plain git
+# so GitHub Pages can serve them (Pages does not serve LFS objects).
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.flac filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,133 @@
+#!/usr/bin/env bash
+# publish-score: export a MuseScore score (PDF, MusicXML, MP3, page PNGs) into
+# the scores repo, regenerate README.md + index.html, commit and push.
+#
+# Usage: publish-score [options] path/to/score.mscz [slug]
+#   --force          re-export even if the score is unchanged
+#   --no-png         skip page PNG export
+#   --no-push        commit locally but don't push
+#   --sound-profile P  "MuseScore Basic" (default) or "MuseSounds"
+#   -h, --help       show this help
+# Env: SCORES_REPO (default ~/Documents/music/scores), MUSESCORE_BIN (default ~/.local/bin/musescore)
+set -euo pipefail
+
+REPO="${SCORES_REPO:-$HOME/Documents/music/scores}"
+MSCORE="${MUSESCORE_BIN:-$HOME/.local/bin/musescore}"
+TIMEOUT="${MUSESCORE_TIMEOUT:-1200}"
+FORCE=0; PNG=1; PUSH=1; PROFILE=""
+
+usage() { sed -n '2,11p' "$(readlink -f "$0")" | sed 's/^# \{0,1\}//'; }
+
+ARGS=()
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --force) FORCE=1 ;;
+    --no-png) PNG=0 ;;
+    --no-push) PUSH=0 ;;
+    --sound-profile) PROFILE="$2"; shift ;;
+    -h|--help) usage; exit 0 ;;
+    -*) echo "Unknown option: $1" >&2; usage >&2; exit 2 ;;
+    *) ARGS+=("$1") ;;
+  esac
+  shift
+done
+[[ ${#ARGS[@]} -ge 1 && ${#ARGS[@]} -le 2 ]] || { usage >&2; exit 2; }
+
+SRC="$(readlink -f "${ARGS[0]}")"
+[[ -f "$SRC" ]] || { echo "No such file: ${ARGS[0]}" >&2; exit 1; }
+[[ "$SRC" == *.mscz ]] || { echo "Expected a .mscz file: $SRC" >&2; exit 1; }
+
+slugify() { echo "$1" | iconv -f utf-8 -t ascii//TRANSLIT 2>/dev/null | tr '[:upper:]' '[:lower:]' \
+  | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$//'; }
+SLUG="${ARGS[1]:-$(slugify "$(basename "$SRC" .mscz)")}"
+SLUG="$(slugify "$SLUG")"
+[[ -n "$SLUG" ]] || { echo "Could not derive a slug" >&2; exit 1; }
+
+[[ -d "$REPO/.git" ]] || { echo "Scores repo not found at $REPO" >&2; exit 1; }
+DIR="$REPO/pieces/$SLUG"; EXP="$DIR/exports"
+mkdir -p "$EXP"
+DEST="$DIR/$SLUG.mscz"
+
+# 1. copy the source score in (never touches the original)
+if [[ "$SRC" != "$(readlink -f "$DEST" 2>/dev/null || true)" ]]; then
+  if ! cmp -s "$SRC" "$DEST" 2>/dev/null; then cp -p "$SRC" "$DEST"; echo "Copied score -> $DEST"; fi
+fi
+
+# 2. export (skipped when the score hash is unchanged and outputs exist)
+HASH="$(sha256sum "$DEST" | cut -d' ' -f1)"
+STAMP="$EXP/.source.sha256"
+need_export=$FORCE
+for f in "$SLUG.pdf" "$SLUG.musicxml" "$SLUG.mp3" meta.json; do [[ -s "$EXP/$f" ]] || need_export=1; done
+[[ $PNG -eq 1 && ! -d "$EXP/png" ]] && need_export=1
+[[ "$(cat "$STAMP" 2>/dev/null)" == "$HASH" ]] || need_export=1
+
+ms_pids() { pgrep -u "$USER" -f '/tmp/\.mount_.*crashpad_handler' 2>/dev/null | sort || true; }
+run_ms() {  # run the MuseScore CLI headless; one export per process (job files crash on MP3)
+  local before after
+  before="$(ms_pids)"
+  local rc=0
+  QT_QPA_PLATFORM=offscreen timeout "$TIMEOUT" "$MSCORE" "$@" </dev/null >>"$LOG" 2>&1 || rc=$?
+  after="$(ms_pids)"
+  # the AppImage leaves an orphaned crashpad_handler behind; kill only the new ones
+  comm -13 <(echo "$before") <(echo "$after") | xargs -r kill 2>/dev/null || true
+  return $rc
+}
+
+if [[ $need_export -eq 1 ]]; then
+  [[ -x "$MSCORE" ]] || { echo "MuseScore CLI not found: $MSCORE" >&2; exit 1; }
+  TMP="$(mktemp -d "${TMPDIR:-/tmp}/publish-score.XXXXXX")"; trap 'rm -rf "$TMP"' EXIT
+  LOG="$TMP/musescore.log"
+  echo "Exporting $SLUG (log: $LOG)"
+  for ext in pdf musicxml mp3; do
+    extra=()
+    [[ $ext == mp3 && -n "$PROFILE" ]] && extra=(--sound-profile "$PROFILE")
+    echo "  -> $SLUG.$ext"
+    if ! run_ms "${extra[@]}" -o "$TMP/$SLUG.$ext" "$DEST" || [[ ! -s "$TMP/$SLUG.$ext" ]]; then
+      echo "Export to $ext failed. Last log lines:" >&2; grep -v '^/lib' "$LOG" | tail -20 >&2; exit 1
+    fi
+  done
+  if [[ $PNG -eq 1 ]]; then
+    echo "  -> page PNGs"
+    mkdir -p "$TMP/png"
+    run_ms -r 100 -o "$TMP/png/$SLUG.png" "$DEST" || echo "PNG export failed (continuing)" >&2
+  fi
+  before="$(ms_pids)"
+  QT_QPA_PLATFORM=offscreen timeout 300 "$MSCORE" --score-meta "$DEST" </dev/null 2>>"$LOG" > "$TMP/meta.raw" || true
+  comm -13 <(echo "$before") <(ms_pids) | xargs -r kill 2>/dev/null || true
+  python3 - "$TMP/meta.raw" "$TMP/meta.json" <<'PY'
+import json, sys
+try:
+    d = json.load(open(sys.argv[1])); m = d.get("metadata", d)
+    if isinstance(m, str): m = json.loads(m)
+    keep = {k: m.get(k) for k in ("title","subtitle","composer","duration","measures","pages","timesig","tempo","mscoreVersion")}
+except Exception:
+    keep = {}
+json.dump(keep, open(sys.argv[2], "w"), ensure_ascii=False, indent=2)
+PY
+  # move results in place
+  for ext in pdf musicxml mp3; do mv -f "$TMP/$SLUG.$ext" "$EXP/"; done
+  mv -f "$TMP/meta.json" "$EXP/meta.json"
+  if [[ $PNG -eq 1 ]] && compgen -G "$TMP/png/*.png" >/dev/null; then rm -rf "$EXP/png"; mv "$TMP/png" "$EXP/png"; fi
+  echo "$HASH" > "$STAMP"
+else
+  echo "Score unchanged since last export; skipping MuseScore (use --force to re-export)"
+fi
+
+# 3. regenerate README.md and index.html
+python3 "$REPO/tools/build-index.py" "$REPO"
+
+# 4. commit and push
+cd "$REPO"
+git add -A pieces README.md index.html tools .gitattributes 2>/dev/null || git add -A
+if git diff --cached --quiet; then
+  echo "Nothing to commit."
+else
+  git commit -q -m "Publish $SLUG" && echo "Committed: Publish $SLUG"
+fi
+if [[ $PUSH -eq 1 ]] && git remote get-url origin >/dev/null 2>&1; then
+  if [[ -n "$(git log --oneline '@{u}..HEAD' 2>/dev/null || echo unpushed)" ]]; then
+    git push -q -u origin HEAD && echo "Pushed to $(git remote get-url origin)"
+  else
+    echo "Already up to date with origin."
+  fi
+fi
