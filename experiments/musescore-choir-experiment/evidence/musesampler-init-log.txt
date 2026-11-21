@@ -1,0 +1,9 @@
+MuseScore 4.7.7 startup log excerpt - MuseSampler initialisation
+Captured while opening bwv244-54-o-haupt-voll-blut-und-wunden.mscz in the GUI.
+Four initSampler lines = one per SATB staff.
+
+11:46:04.887 | INFO  | main_thread     | MuseSamplerResolver::init | MuseSampler successfully inited: /home/daniel/.local/share/MuseSampler/lib/libMuseSamplerCoreLib.so, version: 0.106.0
+11:46:07.041 | INFO  | 124439827347136 | MuseSamplerWrapper::initSampler | Successfully initialized sampler, sampleRate: 44100, blockSize: 1024
+11:46:07.082 | INFO  | 124439827347136 | MuseSamplerWrapper::initSampler | Successfully initialized sampler, sampleRate: 44100, blockSize: 1024
+11:46:07.124 | INFO  | 124439827347136 | MuseSamplerWrapper::initSampler | Successfully initialized sampler, sampleRate: 44100, blockSize: 1024
+11:46:07.170 | INFO  | 124439827347136 | MuseSamplerWrapper::initSampler | Successfully initialized sampler, sampleRate: 44100, blockSize: 1024
