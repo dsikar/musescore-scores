@@ -1,0 +1,58 @@
+Text of http://openhymnal.org/copying.html, retrieved 2026-11-21 (HTML tags stripped).
+
+Copying 
+The Open Hymnal Project uses copyright law of the United States of 
+America. In other countries, it is your responsibility to verify each 
+hymn as being freely distributable.
+Four parts of a hymn are copyrightable:
+ Music (melody) 
+ Setting (also known as arrangement or harmony) 
+ Words (original language) 
+ Translation (if applicable) 
+Each of these parts holds a separate copyright status, and must be 
+considered individually.
+Most of the hymns in the Open Hymnal are in the public domain in all 
+four of these parts. Some are not. Specific copyright terms are listed
+on each score sheet and in each abc file.
+All content produced specifically by the Open Hymnal which is not a part
+of a hymn is placed into the public domain. This includes compilation,
+indices, web pages (or parts thereof), scripts used to assemble the 
+hymnal, and all other data files. Work from other open source projects 
+is not our copyright and remains copyright of the respective owners. 
+This includes but is not limited to the "Zebra Tables" script by David S. 
+Miller used on the web pages, which remains copyright of David S. Miller.
+ Public Domain 
+All hymns or hymn parts listed as "public domain" are not under 
+copyright protection in the United States of America. In other words 
+there is absolutely no ownership of the intellectual property that the 
+words, translation, music, or setting represents.
+No one may restrict you from using these hymn parts in any way (in the 
+USA). Similarly, you may not restrict others from using them in any 
+way. If you change a portion of the public domain work, you may only 
+claim copyright on the portion which you have changed.
+ Other 
+Each work in the Open Hymnal which is not in the public domain gives 
+specific license terms on the score sheet and in the abc source file.
+Most of these have a license which reads similar to the following
+(from the hymn "Author of All Life"):
+Words: Copyright 2009, Brian J. Dumont. These lyrics may be freely 
+reproduced or published for Christian worship, provided they are not 
+altered, and this notice is on each copy. All other rights reserved.
+This means that you may freely use, print, reproduce, and make available
+for others the work in question, provided that the purpose is for 
+Christian worship and that the copyright terms are left intact and are 
+reproduced with the copyrighted work. This does not prevent you from 
+using the copyrighted work as a part of another work which will be sold 
+for-profit, provided that these terms are met.
+Other license terms may be available, but can only be negotiated with 
+the copyright holder. If you would like to use one of these works but
+require a different license, the Open Hymnal will attempt to help you 
+to contact the copyright holder. We may be contacted via email at:
+editor at openhymnal dot org
+ Assembly 
+It is the contention and intention of the Open Hymnal Project that when
+numerous hymns are gathered into a collection, such as one of the printable
+editions, the hymns themselves remain separate and independent works.
+Thus, the copyright applied to any one hymn is not applicable in any way to 
+the copyright of another.
+ Last modified: 21 Nov 2026

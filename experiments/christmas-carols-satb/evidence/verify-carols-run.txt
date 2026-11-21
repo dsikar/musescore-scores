@@ -1,0 +1,190 @@
+Verification run: 2026-11-21 16:44:05Z
+MuseScore      : Version 4.7.7; Build b750c43
+music21 (for MIDI cross-check): yes
+
+== o-come-all-ye-faithful (O Come, All Ye Faithful)
+  parts=Soprano/Alto/Tenor/Bass ok
+  duration=40s tempo=120 measures=21 time=4/4 key=1 ok
+  audiosettings: profile=MuseSounds soprano->Muse Choir/Sopranos, alto->Muse Choir/Altos, tenor->Muse Choir/Tenors, bass->Muse Choir/Basses ok
+  pdf pages=2 ok
+  starter O_Come_All_Ye_Faithful-Adeste_Fideles-Portugese_Hymn.pdf present ok
+  starter O_Come_All_Ye_Faithful-Adeste_Fideles-Portugese_Hymn.abc present ok
+  midi:   Soprano   62 onsets  no exact match (diverges at score offset 7.0 ql); with same-pitch splits merged: 3 match(es)
+  midi:      xml : [(62, Fraction(2, 1)), (71, Fraction(1, 1)), (69, Fraction(1, 1)), (71, Fraction(1, 1)), (72, Fraction(1, 1)), (71, Fraction(2, 1))]
+  midi:      midi: [(62, Fraction(1, 1)), (62, Fraction(1, 1)), (71, Fraction(1, 1)), (69, Fraction(1, 1)), (71, Fraction(1, 1)), (72, Fraction(1, 1))]
+  midi:   Alto      60 onsets  no exact match (diverges at score offset 7.0 ql); with same-pitch splits merged: 3 match(es)
+  midi:      xml : [(62, Fraction(2, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (64, Fraction(1, 1)), (62, Fraction(2, 1))]
+  midi:      midi: [(62, Fraction(1, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (64, Fraction(1, 1))]
+  midi:   Tenor     60 onsets  no exact match (diverges at score offset 7.0 ql); with same-pitch splits merged: 3 match(es)
+  midi:      xml : [(57, Fraction(2, 1)), (55, Fraction(1, 1)), (57, Fraction(1, 1)), (55, Fraction(1, 1)), (55, Fraction(1, 1)), (55, Fraction(2, 1))]
+  midi:      midi: [(57, Fraction(1, 1)), (57, Fraction(1, 1)), (55, Fraction(1, 1)), (57, Fraction(1, 1)), (55, Fraction(1, 1)), (55, Fraction(1, 1))]
+  midi:   Bass      61 onsets  no exact match (diverges at score offset 7.0 ql); with same-pitch splits merged: 3 match(es)
+  midi:      xml : [(54, Fraction(2, 1)), (55, Fraction(1, 1)), (54, Fraction(1, 1)), (55, Fraction(1, 1)), (48, Fraction(1, 1)), (50, Fraction(2, 1))]
+  midi:      midi: [(54, Fraction(1, 1)), (54, Fraction(1, 1)), (55, Fraction(1, 1)), (54, Fraction(1, 1)), (55, Fraction(1, 1)), (48, Fraction(1, 1))]
+  midi: RESULT PASS (after merging same-pitch splits)
+
+== hark-the-herald-angels-sing (Hark! The Herald Angels Sing)
+  parts=Soprano/Alto/Tenor/Bass ok
+  duration=48s tempo=100 measures=20 time=4/4 key=-1 ok
+  audiosettings: profile=MuseSounds soprano->Muse Choir/Sopranos, alto->Muse Choir/Altos, tenor->Muse Choir/Tenors, bass->Muse Choir/Basses ok
+  pdf pages=2 ok
+  starter Hark_The_Herald_Angels_Sing-Mendelssohn.pdf present ok
+  starter Hark_The_Herald_Angels_Sing-Mendelssohn.abc present ok
+  midi:   Soprano   76 onsets  exact full-pass matches in MIDI: 2
+  midi:   Alto      73 onsets  exact full-pass matches in MIDI: 2
+  midi:   Tenor     70 onsets  exact full-pass matches in MIDI: 2
+  midi:   Bass      72 onsets  exact full-pass matches in MIDI: 2
+  midi: RESULT PASS (exact)
+
+== silent-night (Silent Night)
+  parts=Soprano/Alto/Tenor/Bass ok
+  duration=36s tempo=60 measures=12 time=3/4 key=-2 ok
+  audiosettings: profile=MuseSounds soprano->Muse Choir/Sopranos, alto->Muse Choir/Altos, tenor->Muse Choir/Tenors, bass->Muse Choir/Basses ok
+  pdf pages=1 ok
+  starter Silent_Night-Stille_Nacht.pdf present ok
+  starter Silent_Night-Stille_Nacht.abc present ok
+  midi:   Soprano   46 onsets  exact full-pass matches in MIDI: 2
+  midi:   Alto      44 onsets  exact full-pass matches in MIDI: 1
+  midi:   Tenor     42 onsets  exact full-pass matches in MIDI: 2
+  midi:   Bass      41 onsets  exact full-pass matches in MIDI: 1
+  midi: RESULT PASS (exact)
+
+== joy-to-the-world (Joy to the World)
+  parts=Soprano/Alto/Tenor/Bass ok
+  duration=29s tempo=80 measures=19 time=2/4 key=2 ok
+  audiosettings: profile=MuseSounds soprano->Muse Choir/Sopranos, alto->Muse Choir/Altos, tenor->Muse Choir/Tenors, bass->Muse Choir/Basses ok
+  pdf pages=1 ok
+  starter Joy_To_The_World-Antioch.pdf present ok
+  starter Joy_To_The_World-Antioch.abc present ok
+  midi:   Soprano   57 onsets  exact full-pass matches in MIDI: 1
+  midi:   Alto      57 onsets  exact full-pass matches in MIDI: 1
+  midi:   Tenor     40 onsets  exact full-pass matches in MIDI: 1
+  midi:   Bass      40 onsets  exact full-pass matches in MIDI: 1
+  midi: RESULT PASS (exact)
+
+== god-rest-ye-merry-gentlemen (God Rest Ye Merry, Gentlemen)
+  parts=Soprano/Alto/Tenor/Bass ok
+  duration=28s tempo=160 measures=20 time=4/4 key=1 ok
+  audiosettings: profile=MuseSounds soprano->Muse Choir/Sopranos, alto->Muse Choir/Altos, tenor->Muse Choir/Tenors, bass->Muse Choir/Basses ok
+  pdf pages=2 ok
+  starter God_Rest_Ye_Merry_Gentlemen-God_Rest_Ye_Merry_Gentlemen.pdf present ok
+  starter God_Rest_Ye_Merry_Gentlemen-God_Rest_Ye_Merry_Gentlemen.abc present ok
+  midi:   Soprano   67 onsets  exact full-pass matches in MIDI: 2
+  midi:   Alto      66 onsets  exact full-pass matches in MIDI: 2
+  midi:   Tenor     69 onsets  exact full-pass matches in MIDI: 2
+  midi:   Bass      68 onsets  exact full-pass matches in MIDI: 2
+  midi: RESULT PASS (exact)
+
+== the-first-noel (The First Noel)
+  parts=Soprano/Alto/Tenor/Bass ok
+  duration=43s tempo=100 measures=25 time=3/4 key=2 ok
+  audiosettings: profile=MuseSounds soprano->Muse Choir/Sopranos, alto->Muse Choir/Altos, tenor->Muse Choir/Tenors, bass->Muse Choir/Basses ok
+  pdf pages=2 ok
+  starter The_First_Noel-The_First_Noel.pdf present ok
+  starter The_First_Noel-The_First_Noel.abc present ok
+  midi:   Soprano   73 onsets  exact full-pass matches in MIDI: 2
+  midi:   Alto      55 onsets  no exact match (diverges at score offset 27.0 ql); with same-pitch splits merged: 5 match(es)
+  midi:      xml : [(62, Fraction(1, 1)), (64, Fraction(2, 1)), (64, Fraction(1, 1)), (69, Fraction(2, 1)), (67, Fraction(1, 1)), (66, Fraction(2, 1))]
+  midi:      midi: [(62, Fraction(1, 2)), (62, Fraction(1, 2)), (64, Fraction(2, 1)), (64, Fraction(1, 1)), (69, Fraction(2, 1)), (67, Fraction(1, 1))]
+  midi:   Tenor     62 onsets  no exact match (diverges at score offset 27.0 ql); with same-pitch splits merged: 5 match(es)
+  midi:      xml : [(62, Fraction(1, 1)), (62, Fraction(1, 1)), (61, Fraction(1, 1)), (59, Fraction(1, 1)), (57, Fraction(2, 1)), (59, Fraction(1, 2))]
+  midi:      midi: [(62, Fraction(1, 2)), (62, Fraction(1, 2)), (62, Fraction(1, 1)), (61, Fraction(1, 1)), (59, Fraction(1, 1)), (57, Fraction(2, 1))]
+  midi:   Bass      66 onsets  no exact match (diverges at score offset 27.0 ql); with same-pitch splits merged: 5 match(es)
+  midi:      xml : [(47, Fraction(1, 1)), (45, Fraction(1, 1)), (57, Fraction(1, 1)), (55, Fraction(1, 1)), (54, Fraction(2, 1)), (55, Fraction(1, 1))]
+  midi:      midi: [(47, Fraction(1, 2)), (47, Fraction(1, 2)), (45, Fraction(1, 1)), (57, Fraction(1, 1)), (55, Fraction(1, 1)), (54, Fraction(2, 1))]
+  midi: RESULT PASS (after merging same-pitch splits)
+
+== o-little-town-of-bethlehem (O Little Town of Bethlehem)
+  parts=Soprano/Alto/Tenor/Bass ok
+  duration=38s tempo=100 measures=17 time=4/4 key=-1 ok
+  audiosettings: profile=MuseSounds soprano->Muse Choir/Sopranos, alto->Muse Choir/Altos, tenor->Muse Choir/Tenors, bass->Muse Choir/Basses ok
+  pdf pages=2 ok
+  starter O_Little_Town_Of_Bethlehem-St_Louis.pdf present ok
+  starter O_Little_Town_Of_Bethlehem-St_Louis.abc present ok
+  midi:   Soprano   57 onsets  no exact match (diverges at score offset 59.0 ql); with same-pitch splits merged: 5 match(es)
+  midi:      xml : [(69, Fraction(3, 2)), (67, Fraction(1, 2)), (65, None)]
+  midi:      midi: [(69, Fraction(1, 1)), (69, Fraction(1, 2)), (67, Fraction(1, 2)), (65, Fraction(7, 2)), (69, Fraction(1, 1)), (69, Fraction(1, 1))]
+  midi:   Alto      56 onsets  no exact match (diverges at score offset 59.0 ql); with same-pitch splits merged: 5 match(es)
+  midi:      xml : [(60, Fraction(3, 2)), (58, Fraction(1, 2)), (57, None)]
+  midi:      midi: [(60, Fraction(1, 1)), (60, Fraction(1, 2)), (58, Fraction(1, 2)), (57, Fraction(7, 2)), (60, Fraction(1, 1)), (60, Fraction(1, 1))]
+  midi:   Tenor     58 onsets  no exact match (diverges at score offset 59.0 ql); with same-pitch splits merged: 5 match(es)
+  midi:      xml : [(53, Fraction(3, 2)), (52, Fraction(1, 2)), (53, None)]
+  midi:      midi: [(53, Fraction(1, 1)), (53, Fraction(1, 2)), (52, Fraction(1, 2)), (53, Fraction(7, 2)), (53, Fraction(1, 1)), (53, Fraction(1, 1))]
+  midi:   Bass      55 onsets  no exact match (diverges at score offset 59.0 ql); with same-pitch splits merged: 5 match(es)
+  midi:      xml : [(48, Fraction(3, 2)), (48, Fraction(1, 2)), (41, None)]
+  midi:      midi: [(48, Fraction(1, 1)), (48, Fraction(1, 2)), (48, Fraction(1, 2)), (41, Fraction(7, 2)), (53, Fraction(1, 1)), (53, Fraction(1, 1))]
+  midi: RESULT PASS (after merging same-pitch splits)
+
+== in-the-bleak-midwinter (In the Bleak Midwinter)
+  parts=Soprano/Alto/Tenor/Bass ok
+  duration=38s tempo=100 measures=17 time=4/4 key=-1 ok
+  audiosettings: profile=MuseSounds soprano->Muse Choir/Sopranos, alto->Muse Choir/Altos, tenor->Muse Choir/Tenors, bass->Muse Choir/Basses ok
+  pdf pages=1 ok
+  starter In_The_Bleak_MidWinter-Cranham.pdf present ok
+  starter In_The_Bleak_MidWinter-Cranham.abc present ok
+  midi:   Soprano   45 onsets  no exact match (diverges at score offset 5.0 ql); with same-pitch splits merged: 5 match(es)
+  midi:      xml : [(67, Fraction(2, 1)), (65, Fraction(2, 1)), (67, Fraction(3, 2)), (69, Fraction(1, 2)), (67, Fraction(1, 1)), (62, Fraction(1, 1))]
+  midi:      midi: [(67, Fraction(1, 1)), (67, Fraction(1, 1)), (65, Fraction(2, 1)), (67, Fraction(3, 2)), (69, Fraction(1, 2)), (67, Fraction(1, 1))]
+  midi:   Alto      42 onsets  no exact match (diverges at score offset 7.0 ql); with same-pitch splits merged: 5 match(es)
+  midi:      xml : [(62, Fraction(2, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (60, Fraction(1, 1)), (58, Fraction(4, 1))]
+  midi:      midi: [(62, Fraction(1, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (60, Fraction(1, 1))]
+  midi:   Tenor     44 onsets  no exact match (diverges at score offset 7.0 ql); with same-pitch splits merged: 5 match(es)
+  midi:      xml : [(57, Fraction(2, 1)), (55, Fraction(3, 2)), (50, Fraction(1, 2)), (50, Fraction(1, 1)), (53, Fraction(1, 1)), (53, Fraction(2, 1))]
+  midi:      midi: [(57, Fraction(1, 1)), (57, Fraction(1, 1)), (55, Fraction(3, 2)), (50, Fraction(1, 2)), (50, Fraction(1, 1)), (53, Fraction(1, 1))]
+  midi:   Bass      43 onsets  no exact match (diverges at score offset 9.0 ql); with same-pitch splits merged: 5 match(es)
+  midi:      xml : [(46, Fraction(3, 2)), (48, Fraction(1, 2)), (46, Fraction(1, 1)), (45, Fraction(1, 1)), (43, Fraction(2, 1)), (48, Fraction(2, 1))]
+  midi:      midi: [(46, Fraction(2, 1)), (48, Fraction(3, 2)), (53, Fraction(1, 2)), (53, Fraction(2, 1)), (53, Fraction(5, 2)), (53, Fraction(3, 2))]
+  midi: RESULT PASS (after merging same-pitch splits)
+
+== angels-from-the-realms-of-glory (Angels from the Realms of Glory)
+  parts=Soprano/Alto/Tenor/Bass ok
+  duration=29s tempo=100 measures=13 time=4/4 key=0 ok
+  audiosettings: profile=MuseSounds soprano->Muse Choir/Sopranos, alto->Muse Choir/Altos, tenor->Muse Choir/Tenors, bass->Muse Choir/Basses ok
+  pdf pages=1 ok
+  starter Angels_From_The_Realms_Of_Glory-Regent_Square.pdf present ok
+  starter Angels_From_The_Realms_Of_Glory-Regent_Square.abc present ok
+  midi:   Soprano   46 onsets  exact full-pass matches in MIDI: 2
+  midi:   Alto      47 onsets  exact full-pass matches in MIDI: 2
+  midi:   Tenor     47 onsets  exact full-pass matches in MIDI: 2
+  midi:   Bass      47 onsets  exact full-pass matches in MIDI: 2
+  midi: RESULT PASS (exact)
+
+== it-came-upon-the-midnight-clear (It Came Upon the Midnight Clear)
+  parts=Soprano/Alto/Tenor/Bass ok
+  duration=48s tempo=60 measures=17 time=6/8 key=-2 ok
+  audiosettings: profile=MuseSounds soprano->Muse Choir/Sopranos, alto->Muse Choir/Altos, tenor->Muse Choir/Tenors, bass->Muse Choir/Basses ok
+  pdf pages=2 ok
+  starter It_Came_Upon_A_Midnight_Clear-Carol.pdf present ok
+  starter It_Came_Upon_A_Midnight_Clear-Carol.abc present ok
+  midi:   Soprano   66 onsets  exact full-pass matches in MIDI: 1
+  midi:   Alto      56 onsets  exact full-pass matches in MIDI: 1
+  midi:   Tenor     61 onsets  exact full-pass matches in MIDI: 1
+  midi:   Bass      57 onsets  exact full-pass matches in MIDI: 1
+  midi: RESULT PASS (exact)
+
+== what-child-is-this (What Child Is This?)
+  parts=Soprano/Alto/Tenor/Bass ok
+  duration=36s tempo=80 measures=17 time=6/8 key=2 ok
+  audiosettings: profile=MuseSounds soprano->Muse Choir/Sopranos, alto->Muse Choir/Altos, tenor->Muse Choir/Tenors, bass->Muse Choir/Basses ok
+  pdf pages=2 ok
+  starter What_Child_Is_This-Greensleeves.pdf present ok
+  starter What_Child_Is_This-Greensleeves.abc present ok
+  midi:   Soprano   71 onsets  exact full-pass matches in MIDI: 1
+  midi:   Alto      59 onsets  exact full-pass matches in MIDI: 1
+  midi:   Tenor     56 onsets  exact full-pass matches in MIDI: 1
+  midi:   Bass      56 onsets  exact full-pass matches in MIDI: 1
+  midi: RESULT PASS (exact)
+
+== good-king-wenceslas (Good King Wenceslas)
+  parts=Soprano/Alto/Tenor/Bass ok
+  duration=29s tempo=140 measures=17 time=4/4 key=3 ok
+  audiosettings: profile=MuseSounds soprano->Muse Choir/Sopranos, alto->Muse Choir/Altos, tenor->Muse Choir/Tenors, bass->Muse Choir/Basses ok
+  pdf pages=2 ok
+  starter Good_King_Wenceslas-Tempus_Adest_Floridum.pdf present ok
+  starter Good_King_Wenceslas-Tempus_Adest_Floridum.abc present ok
+  midi:   Soprano   53 onsets  exact full-pass matches in MIDI: 2
+  midi:   Alto      53 onsets  exact full-pass matches in MIDI: 2
+  midi:   Tenor     53 onsets  exact full-pass matches in MIDI: 2
+  midi:   Bass      53 onsets  exact full-pass matches in MIDI: 2
+  midi: RESULT PASS (exact)
+
