@@ -1,0 +1,5 @@
+Muse Sounds engagement check, 2026-11-21 16:41:03Z, MuseScore 4.7.7, headless (QT_QPA_PLATFORM=offscreen)
+  silent-night  MuseSounds       exit=0 md5=ef70e0728f2cdd1a4c204084175e9c5e duration=39.053000s
+  silent-night  MuseScore Basic  exit=0 md5=301b70b4bf56aeccf73984f33d1803bf duration=39.053000s
+  good-king-wenceslas  MuseSounds       exit=0 md5=5febb4d2f5f7e750f915c3ee034c4698 duration=32.208875s
+  good-king-wenceslas  MuseScore Basic  exit=0 md5=bba455791a7cf1cfd9679b0149fd2821 duration=32.208875s
