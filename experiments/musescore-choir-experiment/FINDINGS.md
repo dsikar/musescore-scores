@@ -119,7 +119,7 @@ committed `.mscz` and the result rendered under Muse Choir:
 
 | Version | MD5 |
 |---|---|
-| With both verses of German text | `6937d2f585941cf1deb92e82d0313c5f` |
+| With the German text (one stanza, Soprano staff) | `6937d2f585941cf1deb92e82d0313c5f` |
 | With every lyric removed | `6937d2f585941cf1deb92e82d0313c5f` |
 
 Byte-identical. The text has **no** effect on the audio whatsoever.
@@ -127,9 +127,9 @@ Byte-identical. The text has **no** effect on the audio whatsoever.
 What you actually hear is a sustained-vowel choir; Muse Choir is built on vowel samples
 (advertised as *Ahh*, *Ooh*, *Mmm*). Lyrics exist in the notation and the PDF only.
 
-MuseScore 4 release notes do describe lyric text triggering different phoneme samples for
-choral libraries, and forum reports describe it working erratically or not at all. **That
-documented capability was not observed here.** It may need different markup, a different
+Lyric text triggering different phoneme samples in choral libraries has been reported, and
+forum reports describe it working erratically or not at all. No official documentation
+link was found for it, so it is unverified. **It was not observed here.** It may need different markup, a different
 library, or a setting this experiment did not find — but on 4.7.7 with Muse Choir and
 MuseSampler 0.106.0, removing the lyrics changed nothing.
 

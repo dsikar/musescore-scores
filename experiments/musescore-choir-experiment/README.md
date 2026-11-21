@@ -99,7 +99,11 @@ used instead.
 | Fixed footer spacing | Two adjacent `<credit-words>` rendered as `Greentreeused by permission`; now reads `Greentree — used by permission` |
 
 **No notes, rhythms, rests, clefs, key or time signatures, fermatas, repeats or lyrics
-were altered.** Both verses of the German text are present as encoded.
+were altered.** The German text is present as encoded: **one stanza** of Gerhardt's
+hymn (all eight lines), laid out as two lyric lines under the repeated opening, and only
+on the **Soprano staff** — the Alto, Tenor and Bass staves carry no lyrics in the source
+encoding. Bach's setting in the Passion uses a second stanza (*Du edles Angesichte*),
+which is **not** in this encoding and was not added.
 
 Worth flagging: the **Tenor staff uses a bass clef**, as in the source encoding, rather
 than the octave-treble clef often used in modern vocal scores. This was preserved
@@ -211,7 +215,7 @@ proofreading against a separate edition was **not** performed — this is the ma
 verification gap. What was checked: part names and count (4: Soprano/Alto/Tenor/Bass),
 measure count (15), key signature (one flat), time signature (4/4), clefs (G, G, F, F),
 fermata count (24), repeat structure (one backward repeat, present in all four parts),
-and that both verses of lyric text survived the round-trip. MuseScore's `--score-meta`
+and that the lyric text (one stanza, Soprano staff only) survived the round-trip. MuseScore's `--score-meta`
 independently confirms 15 measures, 4/4, key −1, tempo 72 and four parts.
 
 ---
@@ -227,9 +231,10 @@ What you actually hear is a sustained vowel choir — Muse Choir is built on vow
 (the library is advertised with *Ahh*, *Ooh* and *Mmm*). Every syllable is sung on the
 same vowel; the lyrics exist in the notation and the PDF only.
 
-MuseScore 4 release notes do mention lyric text triggering different phoneme samples for
-choral libraries, and MuseScore forum threads report this working inconsistently or not
-at all. **This is a documented capability that was not observed here** — on MuseScore
+It has been reported that lyric text can trigger different phoneme samples in choral
+libraries, and MuseScore forum threads report this working inconsistently or not at all.
+**No official documentation link was found to support this, so treat it as an
+unverified claim; in any case it was not observed here** — on MuseScore
 4.7.7 with Muse Choir and MuseSampler 0.106.0, stripping the lyrics changed nothing. It
 is possible the feature requires different markup, a different library, or a setting not
 found during this experiment.
@@ -312,7 +317,7 @@ musescore-choir-experiment/
 ## Known limitations and unresolved problems
 
 1. **Lyrics are not sung.** Verified byte-identical renders with and without lyrics. The
-   phoneme feature named in MuseScore's release notes could not be made to work here.
+   lyric-driven phoneme playback reported elsewhere (unsourced; see above) was not observed here.
 2. **No independent note-by-note proofread.** The notes come from the Greentree/music21
    encoding and were checked structurally, not compared bar-by-bar against a separate
    edition such as the Neue Bach-Ausgabe.
@@ -326,8 +331,8 @@ musescore-choir-experiment/
    were captured from MuseScore's XWayland window with `import -window <id>`, using a
    locally extracted `xdotool` (no root) to drive the GUI. Nothing was installed
    system-wide.
-6. **Not committed.** Per the brief, nothing in this directory has been committed,
-   pushed or published.
+6. **No official documentation links.** Capability statements here rest on the tests
+   described above, not on cited MuseScore or Muse Sounds documentation.
 
 ## Note for the parent repository
 
