@@ -12,6 +12,12 @@ One requirement could not be met as asked: Muse Choir does **not** sing the nota
 lyrics. This was tested directly rather than assumed — see
 [What playback actually supports](#what-playback-actually-supports).
 
+> **Findings that apply beyond this experiment are collected in
+> [`FINDINGS.md`](FINDINGS.md)** — Muse Sounds working for headless CLI rendering (which
+> contradicts the repository's top-level README), Muse Sounds failing *silently* back to
+> MS Basic with a zero exit code, and Muse Choir ignoring lyrics. Re-check them at any
+> time with [`./verify-findings.sh`](verify-findings.sh).
+
 ---
 
 ## Environment
@@ -275,8 +281,13 @@ QT_QPA_PLATFORM=offscreen musescore --sound-profile MuseSounds \
 ```
 musescore-choir-experiment/
 ├── README.md                                        this file
+├── FINDINGS.md                                      findings that apply repo-wide
 ├── PROMPT.md                                        the original task brief
+├── verify-findings.sh                               re-runnable check of every finding
 ├── bwv244-54-o-haupt-voll-blut-und-wunden.mscz      MAIN SCORE (GUI-saved, assignments pinned)
+├── evidence/
+│   ├── verification-run.txt                         output of verify-findings.sh
+│   └── musesampler-init-log.txt                     MuseScore loading the sampler 4x
 ├── source/
 │   ├── bwv244.54.mxl                                unmodified source encoding as downloaded
 │   ├── bwv244.54-prepared.musicxml                  source + tempo and title edits
@@ -325,3 +336,12 @@ installed for command-line rendering."* **That is now out of date** — Muse Sou
 installed and verified working headlessly. `tools/publish-score` already accepts
 `--sound-profile MuseSounds`, so existing scores can be re-rendered with Muse Sounds
 without any tooling change.
+
+Two files need changing together to correct this, because the second regenerates the
+first: the sentence in the top-level `README.md`, and `tools/build-index.py:73` which
+emits it. Neither was touched here, both being outside the experiment directory.
+
+Before switching published pieces over, read the caveat in
+[`FINDINGS.md`](FINDINGS.md): Muse Sounds is a ~17 GB local install requiring a Muse
+account, and it fails *silently* to MS Basic on machines that lack it — with a zero exit
+code. MS Basic remains the right default for `publish-score`.

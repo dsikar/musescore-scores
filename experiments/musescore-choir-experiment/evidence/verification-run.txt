@@ -1,0 +1,37 @@
+Verification run: 2026-11-21 12:21:19Z
+Host kernel    : 7.0.0-38-generic
+MuseScore      : Version 4.7.7; Build b750c43
+Sampler        : present (10805120 bytes)
+Muse Choir     : 607M
+
+== Finding 0: renders are deterministic ==
+(without this, comparing hashes proves nothing)
+  MS Basic render #1 : bff1bc2163ed856d29be11165dacb75f
+  MS Basic render #2 : bff1bc2163ed856d29be11165dacb75f
+  RESULT: PASS - deterministic
+
+== Finding 1: Muse Sounds drives headless CLI rendering ==
+  MuseSounds profile : 6937d2f585941cf1deb92e82d0313c5f
+  MS Basic profile   : bff1bc2163ed856d29be11165dacb75f
+  RESULT: PASS - profiles produce different audio
+
+== Finding 2: with the sampler gone, MuseSounds silently becomes MS Basic ==
+  sampler hidden     : bff1bc2163ed856d29be11165dacb75f   (exit code 0)
+  MS Basic           : bff1bc2163ed856d29be11165dacb75f
+  RESULT: PASS - falls back to MS Basic
+  NOTE: exit code 0 and an MP3 was still written. The failure is silent.
+  sampler restored   : yes
+
+== Finding 3: Muse Choir ignores the notated lyrics ==
+  lyric blocks removed : 52
+  with lyrics          : 6937d2f585941cf1deb92e82d0313c5f
+  without lyrics       : 6937d2f585941cf1deb92e82d0313c5f
+  RESULT: PASS - byte-identical, lyrics do not affect playback
+
+== Recorded sound assignments in the committed score ==
+  activeSoundProfile: MuseSounds
+  alto       -> Muse Choir   / Altos      uid=20
+  bass       -> Muse Choir   / Basses     uid=22
+  metronome  -> (fluid)      / -          uid=-
+  soprano    -> Muse Choir   / Sopranos   uid=19
+  tenor      -> Muse Choir   / Tenors     uid=21
