@@ -53,7 +53,6 @@ christmas-carols-satb/
 ├── verify-carols.sh          re-runnable checks of everything claimed below
 ├── tools/                    pipeline scripts, shared style, carol list
 ├── evidence/                 output of verify-carols.sh and the Muse Sounds check
-├── screenshots/              GUI screenshots (see "Verification")
 └── <carol-slug>/
     ├── <carol-slug>.mscz     SATB score, Muse Choir pinned (GUI-saved)
     ├── <carol-slug>.pdf      PDF export (A4)
@@ -205,7 +204,7 @@ Beyond the script:
   check 6 is the note-by-note guarantee and the visual pass is the backstop for notation.
 - **GUI open** of every score during the Ctrl+S step: each opened without error, in a
   window titled with the score's name.
-- **Screenshots and reopen-after-restart:** see [Known limitations](#known-limitations).
+- **Screenshots and the Mixer check after a restart: not performed.** See [Known limitations](#known-limitations), item 1.
 
 ## Rights
 
@@ -231,14 +230,17 @@ This was not checked independently against the original 19th-century printings.
 
 ## Known limitations
 
-1. **Screenshots and the restart test: see the pull request.** The GUI step worked, but
-   when the screenshots were taken GNOME was opening every new MuseScore window minimised
-   (`WM_STATE: Iconic`), and the window could not be restored from a script. GNOME Shell
-   `Eval` is disabled, `_NET_ACTIVE_WINDOW` requests were ignored, and XWayland cannot
-   capture an unmapped window. The pull request records whether this was resolved; until
-   `screenshots/` holds files, treat the mixer and restart check as **not performed**.
-   What *was* verified without a screenshot: MuseScore was fully quit after each GUI save,
-   and `audiosettings.json` was then read from the files on disk (check 2).
+1. **No screenshots, and no mixer check after a restart: not performed.** The brief asks,
+   for at least two carols, for a mixer screenshot after a full MuseScore restart and a
+   screenshot of the score. Neither was done. A capability check at the start of the run
+   captured a MuseScore window without trouble. Later, GNOME began opening every new
+   MuseScore window minimised (`WM_STATE: Iconic`), and it could not be restored from a
+   script: GNOME Shell `Eval` is disabled, `_NET_ACTIVE_WINDOW` requests were ignored, and
+   XWayland cannot capture an unmapped window. The owner chose to skip this step rather
+   than restore the window by hand. Persistence is therefore shown only indirectly:
+   MuseScore was quit after each GUI save, and the presets were then read from
+   `audiosettings.json` in the files on disk (check 2), which is where MuseScore loads them
+   from on reopen. It has **not** been confirmed visually in the Mixer for these files.
 2. **Lyrics are not sung.** Muse Choir plays vowels; see above.
 3. **Lyrics are on the Soprano staff only**, as in the source's short score. Alto, Tenor
    and Bass have no words.
