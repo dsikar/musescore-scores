@@ -1,6 +1,6 @@
-Verification run: 2026-11-21 16:44:05Z
-MuseScore      : Version 4.7.7; Build b750c43
-music21 (for MIDI cross-check): yes
+Verification run: 2026-11-22 11:35:57Z
+MuseScore      : Version 4.7.5; Build 3654226
+music21 (for MIDI cross-check): no
 
 == o-come-all-ye-faithful (O Come, All Ye Faithful)
   parts=Soprano/Alto/Tenor/Bass ok
@@ -9,19 +9,7 @@ music21 (for MIDI cross-check): yes
   pdf pages=2 ok
   starter O_Come_All_Ye_Faithful-Adeste_Fideles-Portugese_Hymn.pdf present ok
   starter O_Come_All_Ye_Faithful-Adeste_Fideles-Portugese_Hymn.abc present ok
-  midi:   Soprano   62 onsets  no exact match (diverges at score offset 7.0 ql); with same-pitch splits merged: 3 match(es)
-  midi:      xml : [(62, Fraction(2, 1)), (71, Fraction(1, 1)), (69, Fraction(1, 1)), (71, Fraction(1, 1)), (72, Fraction(1, 1)), (71, Fraction(2, 1))]
-  midi:      midi: [(62, Fraction(1, 1)), (62, Fraction(1, 1)), (71, Fraction(1, 1)), (69, Fraction(1, 1)), (71, Fraction(1, 1)), (72, Fraction(1, 1))]
-  midi:   Alto      60 onsets  no exact match (diverges at score offset 7.0 ql); with same-pitch splits merged: 3 match(es)
-  midi:      xml : [(62, Fraction(2, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (64, Fraction(1, 1)), (62, Fraction(2, 1))]
-  midi:      midi: [(62, Fraction(1, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (64, Fraction(1, 1))]
-  midi:   Tenor     60 onsets  no exact match (diverges at score offset 7.0 ql); with same-pitch splits merged: 3 match(es)
-  midi:      xml : [(57, Fraction(2, 1)), (55, Fraction(1, 1)), (57, Fraction(1, 1)), (55, Fraction(1, 1)), (55, Fraction(1, 1)), (55, Fraction(2, 1))]
-  midi:      midi: [(57, Fraction(1, 1)), (57, Fraction(1, 1)), (55, Fraction(1, 1)), (57, Fraction(1, 1)), (55, Fraction(1, 1)), (55, Fraction(1, 1))]
-  midi:   Bass      61 onsets  no exact match (diverges at score offset 7.0 ql); with same-pitch splits merged: 3 match(es)
-  midi:      xml : [(54, Fraction(2, 1)), (55, Fraction(1, 1)), (54, Fraction(1, 1)), (55, Fraction(1, 1)), (48, Fraction(1, 1)), (50, Fraction(2, 1))]
-  midi:      midi: [(54, Fraction(1, 1)), (54, Fraction(1, 1)), (55, Fraction(1, 1)), (54, Fraction(1, 1)), (55, Fraction(1, 1)), (48, Fraction(1, 1))]
-  midi: RESULT PASS (after merging same-pitch splits)
+  midi: SKIPPED — music21 unavailable; original verification remains in evidence/verify-carols-original-12.txt.
 
 == hark-the-herald-angels-sing (Hark! The Herald Angels Sing)
   parts=Soprano/Alto/Tenor/Bass ok
@@ -30,11 +18,7 @@ music21 (for MIDI cross-check): yes
   pdf pages=2 ok
   starter Hark_The_Herald_Angels_Sing-Mendelssohn.pdf present ok
   starter Hark_The_Herald_Angels_Sing-Mendelssohn.abc present ok
-  midi:   Soprano   76 onsets  exact full-pass matches in MIDI: 2
-  midi:   Alto      73 onsets  exact full-pass matches in MIDI: 2
-  midi:   Tenor     70 onsets  exact full-pass matches in MIDI: 2
-  midi:   Bass      72 onsets  exact full-pass matches in MIDI: 2
-  midi: RESULT PASS (exact)
+  midi: SKIPPED — music21 unavailable; original verification remains in evidence/verify-carols-original-12.txt.
 
 == silent-night (Silent Night)
   parts=Soprano/Alto/Tenor/Bass ok
@@ -43,11 +27,7 @@ music21 (for MIDI cross-check): yes
   pdf pages=1 ok
   starter Silent_Night-Stille_Nacht.pdf present ok
   starter Silent_Night-Stille_Nacht.abc present ok
-  midi:   Soprano   46 onsets  exact full-pass matches in MIDI: 2
-  midi:   Alto      44 onsets  exact full-pass matches in MIDI: 1
-  midi:   Tenor     42 onsets  exact full-pass matches in MIDI: 2
-  midi:   Bass      41 onsets  exact full-pass matches in MIDI: 1
-  midi: RESULT PASS (exact)
+  midi: SKIPPED — music21 unavailable; original verification remains in evidence/verify-carols-original-12.txt.
 
 == joy-to-the-world (Joy to the World)
   parts=Soprano/Alto/Tenor/Bass ok
@@ -56,11 +36,7 @@ music21 (for MIDI cross-check): yes
   pdf pages=1 ok
   starter Joy_To_The_World-Antioch.pdf present ok
   starter Joy_To_The_World-Antioch.abc present ok
-  midi:   Soprano   57 onsets  exact full-pass matches in MIDI: 1
-  midi:   Alto      57 onsets  exact full-pass matches in MIDI: 1
-  midi:   Tenor     40 onsets  exact full-pass matches in MIDI: 1
-  midi:   Bass      40 onsets  exact full-pass matches in MIDI: 1
-  midi: RESULT PASS (exact)
+  midi: SKIPPED — music21 unavailable; original verification remains in evidence/verify-carols-original-12.txt.
 
 == god-rest-ye-merry-gentlemen (God Rest Ye Merry, Gentlemen)
   parts=Soprano/Alto/Tenor/Bass ok
@@ -69,11 +45,7 @@ music21 (for MIDI cross-check): yes
   pdf pages=2 ok
   starter God_Rest_Ye_Merry_Gentlemen-God_Rest_Ye_Merry_Gentlemen.pdf present ok
   starter God_Rest_Ye_Merry_Gentlemen-God_Rest_Ye_Merry_Gentlemen.abc present ok
-  midi:   Soprano   67 onsets  exact full-pass matches in MIDI: 2
-  midi:   Alto      66 onsets  exact full-pass matches in MIDI: 2
-  midi:   Tenor     69 onsets  exact full-pass matches in MIDI: 2
-  midi:   Bass      68 onsets  exact full-pass matches in MIDI: 2
-  midi: RESULT PASS (exact)
+  midi: SKIPPED — music21 unavailable; original verification remains in evidence/verify-carols-original-12.txt.
 
 == the-first-noel (The First Noel)
   parts=Soprano/Alto/Tenor/Bass ok
@@ -82,17 +54,7 @@ music21 (for MIDI cross-check): yes
   pdf pages=2 ok
   starter The_First_Noel-The_First_Noel.pdf present ok
   starter The_First_Noel-The_First_Noel.abc present ok
-  midi:   Soprano   73 onsets  exact full-pass matches in MIDI: 2
-  midi:   Alto      55 onsets  no exact match (diverges at score offset 27.0 ql); with same-pitch splits merged: 5 match(es)
-  midi:      xml : [(62, Fraction(1, 1)), (64, Fraction(2, 1)), (64, Fraction(1, 1)), (69, Fraction(2, 1)), (67, Fraction(1, 1)), (66, Fraction(2, 1))]
-  midi:      midi: [(62, Fraction(1, 2)), (62, Fraction(1, 2)), (64, Fraction(2, 1)), (64, Fraction(1, 1)), (69, Fraction(2, 1)), (67, Fraction(1, 1))]
-  midi:   Tenor     62 onsets  no exact match (diverges at score offset 27.0 ql); with same-pitch splits merged: 5 match(es)
-  midi:      xml : [(62, Fraction(1, 1)), (62, Fraction(1, 1)), (61, Fraction(1, 1)), (59, Fraction(1, 1)), (57, Fraction(2, 1)), (59, Fraction(1, 2))]
-  midi:      midi: [(62, Fraction(1, 2)), (62, Fraction(1, 2)), (62, Fraction(1, 1)), (61, Fraction(1, 1)), (59, Fraction(1, 1)), (57, Fraction(2, 1))]
-  midi:   Bass      66 onsets  no exact match (diverges at score offset 27.0 ql); with same-pitch splits merged: 5 match(es)
-  midi:      xml : [(47, Fraction(1, 1)), (45, Fraction(1, 1)), (57, Fraction(1, 1)), (55, Fraction(1, 1)), (54, Fraction(2, 1)), (55, Fraction(1, 1))]
-  midi:      midi: [(47, Fraction(1, 2)), (47, Fraction(1, 2)), (45, Fraction(1, 1)), (57, Fraction(1, 1)), (55, Fraction(1, 1)), (54, Fraction(2, 1))]
-  midi: RESULT PASS (after merging same-pitch splits)
+  midi: SKIPPED — music21 unavailable; original verification remains in evidence/verify-carols-original-12.txt.
 
 == o-little-town-of-bethlehem (O Little Town of Bethlehem)
   parts=Soprano/Alto/Tenor/Bass ok
@@ -101,19 +63,7 @@ music21 (for MIDI cross-check): yes
   pdf pages=2 ok
   starter O_Little_Town_Of_Bethlehem-St_Louis.pdf present ok
   starter O_Little_Town_Of_Bethlehem-St_Louis.abc present ok
-  midi:   Soprano   57 onsets  no exact match (diverges at score offset 59.0 ql); with same-pitch splits merged: 5 match(es)
-  midi:      xml : [(69, Fraction(3, 2)), (67, Fraction(1, 2)), (65, None)]
-  midi:      midi: [(69, Fraction(1, 1)), (69, Fraction(1, 2)), (67, Fraction(1, 2)), (65, Fraction(7, 2)), (69, Fraction(1, 1)), (69, Fraction(1, 1))]
-  midi:   Alto      56 onsets  no exact match (diverges at score offset 59.0 ql); with same-pitch splits merged: 5 match(es)
-  midi:      xml : [(60, Fraction(3, 2)), (58, Fraction(1, 2)), (57, None)]
-  midi:      midi: [(60, Fraction(1, 1)), (60, Fraction(1, 2)), (58, Fraction(1, 2)), (57, Fraction(7, 2)), (60, Fraction(1, 1)), (60, Fraction(1, 1))]
-  midi:   Tenor     58 onsets  no exact match (diverges at score offset 59.0 ql); with same-pitch splits merged: 5 match(es)
-  midi:      xml : [(53, Fraction(3, 2)), (52, Fraction(1, 2)), (53, None)]
-  midi:      midi: [(53, Fraction(1, 1)), (53, Fraction(1, 2)), (52, Fraction(1, 2)), (53, Fraction(7, 2)), (53, Fraction(1, 1)), (53, Fraction(1, 1))]
-  midi:   Bass      55 onsets  no exact match (diverges at score offset 59.0 ql); with same-pitch splits merged: 5 match(es)
-  midi:      xml : [(48, Fraction(3, 2)), (48, Fraction(1, 2)), (41, None)]
-  midi:      midi: [(48, Fraction(1, 1)), (48, Fraction(1, 2)), (48, Fraction(1, 2)), (41, Fraction(7, 2)), (53, Fraction(1, 1)), (53, Fraction(1, 1))]
-  midi: RESULT PASS (after merging same-pitch splits)
+  midi: SKIPPED — music21 unavailable; original verification remains in evidence/verify-carols-original-12.txt.
 
 == in-the-bleak-midwinter (In the Bleak Midwinter)
   parts=Soprano/Alto/Tenor/Bass ok
@@ -122,19 +72,7 @@ music21 (for MIDI cross-check): yes
   pdf pages=1 ok
   starter In_The_Bleak_MidWinter-Cranham.pdf present ok
   starter In_The_Bleak_MidWinter-Cranham.abc present ok
-  midi:   Soprano   45 onsets  no exact match (diverges at score offset 5.0 ql); with same-pitch splits merged: 5 match(es)
-  midi:      xml : [(67, Fraction(2, 1)), (65, Fraction(2, 1)), (67, Fraction(3, 2)), (69, Fraction(1, 2)), (67, Fraction(1, 1)), (62, Fraction(1, 1))]
-  midi:      midi: [(67, Fraction(1, 1)), (67, Fraction(1, 1)), (65, Fraction(2, 1)), (67, Fraction(3, 2)), (69, Fraction(1, 2)), (67, Fraction(1, 1))]
-  midi:   Alto      42 onsets  no exact match (diverges at score offset 7.0 ql); with same-pitch splits merged: 5 match(es)
-  midi:      xml : [(62, Fraction(2, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (60, Fraction(1, 1)), (58, Fraction(4, 1))]
-  midi:      midi: [(62, Fraction(1, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (62, Fraction(1, 1)), (60, Fraction(1, 1))]
-  midi:   Tenor     44 onsets  no exact match (diverges at score offset 7.0 ql); with same-pitch splits merged: 5 match(es)
-  midi:      xml : [(57, Fraction(2, 1)), (55, Fraction(3, 2)), (50, Fraction(1, 2)), (50, Fraction(1, 1)), (53, Fraction(1, 1)), (53, Fraction(2, 1))]
-  midi:      midi: [(57, Fraction(1, 1)), (57, Fraction(1, 1)), (55, Fraction(3, 2)), (50, Fraction(1, 2)), (50, Fraction(1, 1)), (53, Fraction(1, 1))]
-  midi:   Bass      43 onsets  no exact match (diverges at score offset 9.0 ql); with same-pitch splits merged: 5 match(es)
-  midi:      xml : [(46, Fraction(3, 2)), (48, Fraction(1, 2)), (46, Fraction(1, 1)), (45, Fraction(1, 1)), (43, Fraction(2, 1)), (48, Fraction(2, 1))]
-  midi:      midi: [(46, Fraction(2, 1)), (48, Fraction(3, 2)), (53, Fraction(1, 2)), (53, Fraction(2, 1)), (53, Fraction(5, 2)), (53, Fraction(3, 2))]
-  midi: RESULT PASS (after merging same-pitch splits)
+  midi: SKIPPED — music21 unavailable; original verification remains in evidence/verify-carols-original-12.txt.
 
 == angels-from-the-realms-of-glory (Angels from the Realms of Glory)
   parts=Soprano/Alto/Tenor/Bass ok
@@ -143,11 +81,7 @@ music21 (for MIDI cross-check): yes
   pdf pages=1 ok
   starter Angels_From_The_Realms_Of_Glory-Regent_Square.pdf present ok
   starter Angels_From_The_Realms_Of_Glory-Regent_Square.abc present ok
-  midi:   Soprano   46 onsets  exact full-pass matches in MIDI: 2
-  midi:   Alto      47 onsets  exact full-pass matches in MIDI: 2
-  midi:   Tenor     47 onsets  exact full-pass matches in MIDI: 2
-  midi:   Bass      47 onsets  exact full-pass matches in MIDI: 2
-  midi: RESULT PASS (exact)
+  midi: SKIPPED — music21 unavailable; original verification remains in evidence/verify-carols-original-12.txt.
 
 == it-came-upon-the-midnight-clear (It Came Upon the Midnight Clear)
   parts=Soprano/Alto/Tenor/Bass ok
@@ -156,11 +90,7 @@ music21 (for MIDI cross-check): yes
   pdf pages=2 ok
   starter It_Came_Upon_A_Midnight_Clear-Carol.pdf present ok
   starter It_Came_Upon_A_Midnight_Clear-Carol.abc present ok
-  midi:   Soprano   66 onsets  exact full-pass matches in MIDI: 1
-  midi:   Alto      56 onsets  exact full-pass matches in MIDI: 1
-  midi:   Tenor     61 onsets  exact full-pass matches in MIDI: 1
-  midi:   Bass      57 onsets  exact full-pass matches in MIDI: 1
-  midi: RESULT PASS (exact)
+  midi: SKIPPED — music21 unavailable; original verification remains in evidence/verify-carols-original-12.txt.
 
 == what-child-is-this (What Child Is This?)
   parts=Soprano/Alto/Tenor/Bass ok
@@ -169,11 +99,7 @@ music21 (for MIDI cross-check): yes
   pdf pages=2 ok
   starter What_Child_Is_This-Greensleeves.pdf present ok
   starter What_Child_Is_This-Greensleeves.abc present ok
-  midi:   Soprano   71 onsets  exact full-pass matches in MIDI: 1
-  midi:   Alto      59 onsets  exact full-pass matches in MIDI: 1
-  midi:   Tenor     56 onsets  exact full-pass matches in MIDI: 1
-  midi:   Bass      56 onsets  exact full-pass matches in MIDI: 1
-  midi: RESULT PASS (exact)
+  midi: SKIPPED — music21 unavailable; original verification remains in evidence/verify-carols-original-12.txt.
 
 == good-king-wenceslas (Good King Wenceslas)
   parts=Soprano/Alto/Tenor/Bass ok
@@ -182,9 +108,29 @@ music21 (for MIDI cross-check): yes
   pdf pages=2 ok
   starter Good_King_Wenceslas-Tempus_Adest_Floridum.pdf present ok
   starter Good_King_Wenceslas-Tempus_Adest_Floridum.abc present ok
-  midi:   Soprano   53 onsets  exact full-pass matches in MIDI: 2
-  midi:   Alto      53 onsets  exact full-pass matches in MIDI: 2
-  midi:   Tenor     53 onsets  exact full-pass matches in MIDI: 2
-  midi:   Bass      53 onsets  exact full-pass matches in MIDI: 2
-  midi: RESULT PASS (exact)
+  midi: SKIPPED — music21 unavailable; original verification remains in evidence/verify-carols-original-12.txt.
+
+== once-in-royal-davids-city (Once in Royal David's City)
+  parts=Soprano/Alto/Tenor/Bass ok
+  duration=33s tempo=88 measures=12 time=4/4 key=1 ok
+  audiosettings: profile=MuseSounds soprano->Muse Choir/Sopranos, alto->Muse Choir/Altos, tenor->Muse Choir/Tenors, bass->Muse Choir/Basses ok
+  pdf pages=2 ok
+  starter hymns-1909-hymn-566.pdf present ok
+  midi: SKIPPED — manually entered PDF; no independent same-edition MIDI used. See NOTES.md for the bar-by-bar proofread.
+
+== while-shepherds-watched (While Shepherds Watched Their Flocks)
+  parts=Soprano/Alto/Tenor/Bass ok
+  duration=24s tempo=160 measures=12 time=4/2 key=-1 ok
+  audiosettings: profile=MuseSounds soprano->Muse Choir/Sopranos, alto->Muse Choir/Altos, tenor->Muse Choir/Tenors, bass->Muse Choir/Basses ok
+  pdf pages=1 ok
+  starter hymns-1909-hymn-64.pdf present ok
+  midi: SKIPPED — manually entered PDF; no independent same-edition MIDI used. See NOTES.md for the bar-by-bar proofread.
+
+== we-three-kings (We Three Kings of Orient Are)
+  parts=Soprano/Alto/Tenor/Bass ok
+  duration=34s tempo=90 measures=17 time=6/8 key=1 ok
+  audiosettings: profile=MuseSounds soprano->Muse Choir/Sopranos, alto->Muse Choir/Altos, tenor->Muse Choir/Tenors, bass->Muse Choir/Basses ok
+  pdf pages=2 ok
+  starter We_Three_Kings.pdf present ok
+  midi: SKIPPED — manually entered PDF; no independent same-edition MIDI used. See NOTES.md for the bar-by-bar proofread.
 

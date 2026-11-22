@@ -1,0 +1,5 @@
+# Historical PDFs may have an ASCII-only header; keep them out of line diffs.
+*.pdf binary
+# Preserve downloaded HTML and the earlier run log exactly as received.
+we-three-kings/source/mobilehymns-copyright.html -whitespace
+evidence/verify-carols-original-12.txt -whitespace

@@ -9,7 +9,7 @@
 #   2. audiosettings.json pins Muse Choir Sopranos/Altos/Tenors/Basses
 #   3. playback duration at the saved tempo is <= 300 s (--score-meta)
 #   4. the PDF exists, and its page count
-#   5. the starter files (Open Hymnal PDF + ABC) are present in source/
+#   5. the starter PDF is present; Open Hymnal sources also require ABC
 #   6. optional, if PYTHON has music21: every voice's pitch/onset sequence is
 #      found note-for-note in the Open Hymnal MIDI (independent abc2midi render)
 #
@@ -30,7 +30,7 @@ echo "MuseScore      : $(QT_QPA_PLATFORM=offscreen "$MSCORE" --long-version 2>/d
 HAVE21=no; "$PY" -I -c 'import music21' 2>/dev/null && HAVE21=yes
 echo "music21 (for MIDI cross-check): $HAVE21"
 echo
-while IFS=$'\t' read -r slug title base; do
+while IFS=$'\t' read -r slug title base source_kind; do
   d="$HERE/$slug"; m="$d/$slug.mscz"; p="$d/$slug.pdf"
   echo "== $slug ($title)"
   meta=$(QT_QPA_PLATFORM=offscreen timeout 120 "$MSCORE" --score-meta "$m" </dev/null 2>/dev/null)
@@ -39,7 +39,7 @@ import json,sys
 d=json.loads(sys.stdin.read()); d=d.get("metadata",d)
 names=[p.get("name") or p.get("instrumentName") for p in d["parts"]]
 print("parts=" + "/".join(names), "ok" if names==["Soprano","Alto","Tenor","Bass"] else "BAD")
-print("duration=%ss tempo=%s measures=%s time=%s key=%s" % (d["duration"], d["tempo"], d["measures"], d["timesig"], d["keysig"]), "ok" if int(d["duration"])<=300 else "BAD")
+print("duration=%ss tempo=%s measures=%s time=%s key=%s" % (d["duration"], d["tempo"], d["measures"], d["timesig"], d["keysig"]), "ok" if 0<int(d["duration"])<=300 else "BAD")
 ' <<<"$meta" 2>&1) || r="score-meta FAILED BAD"
   echo "$r" | sed 's/^/  /'
   a=$(unzip -p "$m" audiosettings.json 2>/dev/null | python3 -I -c '
@@ -51,15 +51,21 @@ ok=d.get("activeSoundProfile")=="MuseSounds" and all(got.get(k)==("Muse Choir",v
 print("audiosettings: profile=%s " % d.get("activeSoundProfile") + ", ".join("%s->%s/%s" % (k,*got.get(k,("-","-"))) for k in want), "ok" if ok else "BAD")
 ' 2>&1) || a="audiosettings unreadable BAD"
   echo "  $a"
-  if [[ -f $p ]]; then echo "  pdf pages=$(pdfinfo "$p" 2>/dev/null | awk '/^Pages/{print $2}') ok"; else echo "  pdf MISSING BAD"; fi
-  for ext in pdf abc; do
+  pages=$(pdfinfo "$p" 2>/dev/null | awk '/^Pages/{print $2}')
+  if [[ $pages =~ ^[1-9][0-9]*$ ]]; then echo "  pdf pages=$pages ok"; else echo "  pdf unreadable/MISSING BAD"; fi
+  exts=(pdf); [[ $source_kind == pdf ]] || exts+=(abc)
+  for ext in "${exts[@]}"; do
     [[ -f "$d/source/$base.$ext" ]] && echo "  starter $base.$ext present ok" || echo "  starter $base.$ext MISSING BAD"
   done
-  if [[ $HAVE21 == yes ]]; then
+  if [[ $source_kind == pdf ]]; then
+    echo "  midi: SKIPPED — manually entered PDF; no independent same-edition MIDI used. See NOTES.md for the bar-by-bar proofread."
+  elif [[ $HAVE21 == yes ]]; then
     x=$(mktemp -d); unzip -q "$m" -d "$x"
     QT_QPA_PLATFORM=offscreen timeout 120 "$MSCORE" -o "$x/s.musicxml" "$m" </dev/null >/dev/null 2>&1
     "$PY" -I "$HERE/tools/midi_check.py" "$x/s.musicxml" "$d/source/$base.mid" 2>/dev/null | sed 's/^/  midi: /'
     rm -rf "$x"
+  else
+    echo "  midi: SKIPPED — music21 unavailable; original verification remains in evidence/verify-carols-original-12.txt."
   fi
   echo
 done < "$HERE/tools/carols.tsv"

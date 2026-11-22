@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-22",
+  "score": "we-three-kings/we-three-kings.mscz",
+  "method": "Quit all GUI instances after saving all three scores; confirmed no MuseScore process remained; launch new MuseScore process with saved We Three Kings; capture score and F10 mixer before further save.",
+  "window_id": "71303184",
+  "screenshot_files": [
+    "screenshots/we-three-kings-score-after-restart.png",
+    "screenshots/we-three-kings-mixer-after-restart.png"
+  ],
+  "gui_process": "473340 musescore /home/daniel/Documents/music/scores/experiments/christmas-carols-satb/we-three-kings/we-three-kings.mscz"
+}

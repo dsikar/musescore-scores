@@ -1,0 +1,19 @@
+{
+  "kings-muse": {
+    "exit": 0,
+    "sha256": "b7976493b9ede586994e9f3c442bcddb712f84b131880f2d8179ec871f32bc95"
+  },
+  "kings-basic-1": {
+    "exit": 0,
+    "sha256": "0de761ae26b78da2732930dce3727a690cb4524e9e3a9240a7ae580724ea16e1"
+  },
+  "kings-basic-2": {
+    "exit": 0,
+    "sha256": "0de761ae26b78da2732930dce3727a690cb4524e9e3a9240a7ae580724ea16e1"
+  },
+  "kings-no-lyrics": {
+    "exit": 0,
+    "sha256": "b7976493b9ede586994e9f3c442bcddb712f84b131880f2d8179ec871f32bc95"
+  },
+  "lyric_elements_removed": 60
+}
