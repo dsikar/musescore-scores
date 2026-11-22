@@ -1,0 +1,191 @@
+{
+  "musescore_version": "MuseScore: Music Score Editor; Version 4.7.5; Build 3654226",
+  "carols": {
+    "once-in-royal-davids-city": {
+      "pass": true,
+      "parts": [
+        "Soprano",
+        "Alto",
+        "Tenor",
+        "Bass"
+      ],
+      "bars_per_part": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "notated_notes_per_part": [
+        35,
+        38,
+        40,
+        33
+      ],
+      "duration_seconds_score_meta": 33,
+      "tempo_quarter_bpm": 88,
+      "pdf_pages": 2,
+      "presets": {
+        "bass": {
+          "museCategory": "Muse Choir",
+          "museName": "Basses",
+          "musePack": "Muse Choir",
+          "museUID": "22",
+          "museVendorName": "Muse",
+          "playbackSetupData": "voices.choir.bass"
+        },
+        "alto": {
+          "museCategory": "Muse Choir",
+          "museName": "Altos",
+          "musePack": "Muse Choir",
+          "museUID": "20",
+          "museVendorName": "Muse",
+          "playbackSetupData": "voices.choir.alto"
+        },
+        "soprano": {
+          "museCategory": "Muse Choir",
+          "museName": "Sopranos",
+          "musePack": "Muse Choir",
+          "museUID": "19",
+          "museVendorName": "Muse",
+          "playbackSetupData": "voices.choir.soprano"
+        },
+        "tenor": {
+          "museCategory": "Muse Choir",
+          "museName": "Tenors",
+          "musePack": "Muse Choir",
+          "museUID": "21",
+          "museVendorName": "Muse",
+          "playbackSetupData": "voices.choir.tenor"
+        }
+      },
+      "source_ledger_roundtrip": "PASS",
+      "ties_slurs_lyrics_repeat": "PASS",
+      "independent_midi_crosscheck": "SKIPPED: PDF transcription; no same-edition independent MIDI used",
+      "source_pdf_note_reading": "manual; see NOTES.md; not performed by this script"
+    },
+    "while-shepherds-watched": {
+      "pass": true,
+      "parts": [
+        "Soprano",
+        "Alto",
+        "Tenor",
+        "Bass"
+      ],
+      "bars_per_part": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "notated_notes_per_part": [
+        28,
+        28,
+        28,
+        28
+      ],
+      "duration_seconds_score_meta": 24,
+      "tempo_quarter_bpm": 160,
+      "pdf_pages": 1,
+      "presets": {
+        "bass": {
+          "museCategory": "Muse Choir",
+          "museName": "Basses",
+          "musePack": "Muse Choir",
+          "museUID": "22",
+          "museVendorName": "Muse",
+          "playbackSetupData": "voices.choir.bass"
+        },
+        "alto": {
+          "museCategory": "Muse Choir",
+          "museName": "Altos",
+          "musePack": "Muse Choir",
+          "museUID": "20",
+          "museVendorName": "Muse",
+          "playbackSetupData": "voices.choir.alto"
+        },
+        "soprano": {
+          "museCategory": "Muse Choir",
+          "museName": "Sopranos",
+          "musePack": "Muse Choir",
+          "museUID": "19",
+          "museVendorName": "Muse",
+          "playbackSetupData": "voices.choir.soprano"
+        },
+        "tenor": {
+          "museCategory": "Muse Choir",
+          "museName": "Tenors",
+          "musePack": "Muse Choir",
+          "museUID": "21",
+          "museVendorName": "Muse",
+          "playbackSetupData": "voices.choir.tenor"
+        }
+      },
+      "source_ledger_roundtrip": "PASS",
+      "ties_slurs_lyrics_repeat": "PASS",
+      "independent_midi_crosscheck": "SKIPPED: PDF transcription; no same-edition independent MIDI used",
+      "source_pdf_note_reading": "manual; see NOTES.md; not performed by this script"
+    },
+    "we-three-kings": {
+      "pass": true,
+      "parts": [
+        "Soprano",
+        "Alto",
+        "Tenor",
+        "Bass"
+      ],
+      "bars_per_part": [
+        17,
+        17,
+        17,
+        17
+      ],
+      "notated_notes_per_part": [
+        62,
+        62,
+        62,
+        62
+      ],
+      "duration_seconds_score_meta": 34,
+      "tempo_quarter_bpm": 90,
+      "pdf_pages": 2,
+      "presets": {
+        "tenor": {
+          "museCategory": "Muse Choir",
+          "museName": "Tenors",
+          "musePack": "Muse Choir",
+          "museUID": "21",
+          "museVendorName": "Muse",
+          "playbackSetupData": "voices.choir.tenor"
+        },
+        "soprano": {
+          "museCategory": "Muse Choir",
+          "museName": "Sopranos",
+          "musePack": "Muse Choir",
+          "museUID": "19",
+          "museVendorName": "Muse",
+          "playbackSetupData": "voices.choir.soprano"
+        },
+        "alto": {
+          "museCategory": "Muse Choir",
+          "museName": "Altos",
+          "musePack": "Muse Choir",
+          "museUID": "20",
+          "museVendorName": "Muse",
+          "playbackSetupData": "voices.choir.alto"
+        },
+        "bass": {
+          "museCategory": "Muse Choir",
+          "museName": "Basses",
+          "musePack": "Muse Choir",
+          "museUID": "22",
+          "museVendorName": "Muse",
+          "playbackSetupData": "voices.choir.bass"
+        }
+      },
+      "source_ledger_roundtrip": "PASS",
+      "ties_slurs_lyrics_repeat": "PASS",
+      "independent_midi_crosscheck": "SKIPPED: PDF transcription; no same-edition independent MIDI used",
+      "source_pdf_note_reading": "manual; see NOTES.md; not performed by this script"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "once-in-royal-davids-city": {
+    "duration_seconds_mp3": 35.79,
+    "decode": "PASS",
+    "peak_dbfs": -9.487811,
+    "rms_dbfs": -26.680816,
+    "human_listen_through": "not performed"
+  },
+  "while-shepherds-watched": {
+    "duration_seconds_mp3": 27.06,
+    "decode": "PASS",
+    "peak_dbfs": -9.941572,
+    "rms_dbfs": -27.031711,
+    "human_listen_through": "not performed"
+  },
+  "we-three-kings": {
+    "duration_seconds_mp3": 37.07,
+    "decode": "PASS",
+    "peak_dbfs": -10.318372,
+    "rms_dbfs": -27.905142,
+    "human_listen_through": "not performed"
+  }
+}

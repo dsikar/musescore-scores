@@ -15,11 +15,15 @@ set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MSCORE="${MSCORE:-$HOME/.local/bin/musescore}"
 PY="${PYTHON:-python3}"
-: "${ABC2XML:?set ABC2XML to the path of abc2xml.py (v269)}"
 OUT="$HERE/build"; TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
 mkdir -p "$OUT"
-while IFS=$'\t' read -r slug title base; do
+while IFS=$'\t' read -r slug title base source_kind; do
   if [[ $# -gt 0 ]] && [[ ! " $* " == *" $slug "* ]]; then continue; fi
+  if [[ $source_kind == pdf ]]; then
+    echo "skip $slug: PDF transcription; see tools/additional_carols.py and its NOTES.md"
+    continue
+  fi
+  : "${ABC2XML:?set ABC2XML to the path of abc2xml.py (v269)}"
   src="$HERE/$slug/source/$base.abc"
   "$PY" -I "$HERE/tools/prep_abc.py" "$src" "$TMP/$slug.abc"
   "$PY" -I "$ABC2XML" -o "$TMP" "$TMP/$slug.abc" >/dev/null 2>&1
