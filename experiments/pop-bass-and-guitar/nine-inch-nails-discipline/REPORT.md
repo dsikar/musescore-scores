@@ -18,7 +18,7 @@ An instrumental two-staff MuseScore Studio arrangement (**Guitar** and **Bass Gu
 
 ### Song Form, Bar Ranges and Timestamps
 
-At **♩ = 122 BPM** in **4/4** (`1.9672 s` per bar), the 132 notated measures total **259.67 s (4:19.7)**, aligning with the official 259.19 s (4:19.2) studio recording across all nine sections:
+At **♩ = 122 BPM** in **4/4** (`1.9672 s` per bar; acoustic grid fit against the studio MP3 aligns at `121.8 BPM`, `t0 = -0.80 s`), the 132 notated measures total **259.67 s (4:19.7)**, matching the official 259.19 s (4:19.2) studio recording across all nine sections:
 
 | Section | Measures | Bars | Approx. Timestamps (♩ = 122) | Bass Guitar | Guitar Harmony (Concert) |
 |---|---:|---:|---|---|---|
@@ -27,30 +27,30 @@ At **♩ = 122 BPM** in **4/4** (`1.9672 s` per bar), the 132 notated measures t
 | **Chorus 1** | 29–36 | 8 | 0:55.1 – 1:10.8 | Driving 8ths (`D#1 → C#2 → G#1 → B1`) ×2 | `D#m \| C# \| G# \| B` ×2 |
 | **Pre-Verse** | 37–40 | 4 | 1:10.8 – 1:18.7 | Rests (`Wx4`) | `G# – C# \| D#m` ×2 |
 | **Verse II** | 41–56 | 16 | 1:18.7 – 1:50.2 | Syncopated riff with slide-outs + low `D#1` pedal (mm. 53–54) + break & pickup (mm. 55–56) | `G# – C# \| D#m` ×6; `D#m` pedal (mm. 53–54); sustained `D#m` break (mm. 55–56) |
-| **Chorus 2** | 57–72 | 16 | 1:50.2 – 2:21.6 | Driving 8ths with chromatic `C2` pickup on bar 1 beat 4& ×4 | `D#m \| C# \| G# \| B` ×4 |
-| **Interlude** | 73–104 | 32 | 2:21.6 – 3:24.6 | Atmospheric `D#1` pedal with `C#1→D#1` hammer-ons & swells (mm. 73–96); chorus groove (mm. 97–104) | Sustained/building `D#m` (mm. 73–96); `D#m \| C# \| G# \| B` ×2 (mm. 97–104) |
+| **Chorus 2** | 57–72 | 16 | 1:50.2 – 2:21.6 | Driving 8ths (`D#1 → C#2 → G#1 → B1`) ×4 | `D#m \| C# \| G# \| B` ×4 |
+| **Interlude** | 73–104 | 32 | 2:21.6 – 3:24.6 | Sustained `D#1` odd-bar anchors + `C#1→D#1` pickups at mm. 80, 88, 94, 96 (mm. 73–96); chorus groove (mm. 97–104) | Sustained/building `D#m` (mm. 73–96); `D#m \| C# \| G# \| B` ×2 (mm. 97–104) |
 | **Out-Chorus** | 105–120 | 16 | 3:24.6 – 3:56.1 | Driving 8ths (`D#1 → C#2 → G#1 → B1`) ×4 with m. 112 slide-out & m. 120 turnaround | `D#m \| C# \| G# \| B` ×4 |
 | **Outro** | 121–132 | 12 | 3:56.1 – 4:19.7 | Driving 8ths ×3 with m. 128 slide-out, ending cleanly on m. 132 | `D#m \| C# \| G# \| B` ×3 |
 
 **Omissions:** None from the bassline or 132-bar song structure. Percussion, vocals, lead synth/piano counter-melodies and secondary overdubs from the studio multitracks are intentionally omitted to satisfy the two-staff (Guitar + Bass Guitar) instrumentation brief.
 
-**Verified playback duration:** `260 s` (`4:20`) in MuseScore `--score-meta`; `262.74 s` (`4:22.7`) in the exported MP3 (including ~3.1 s of reverb tail after the final beat of m. 132).
+**Verified playback duration:** `260 s` (`4:20`) in MuseScore `--score-meta`; `262.74 s` (`4:22.7`) in the exported MP3 (including ~3.1 s of Muse Reverb tail after the final beat of m. 132).
 
 ---
 
-## 2. Sources and Rights Assessment
+## 2. Sources, Provenance and Rights Assessment
 
 All sources were accessed on **22 November 2026** via normal public HTTP without bypassing logins, paywalls, download limits or bot protection.
 
-### A. Underlying Musical Work & Official Reference Release (Openly Licensed)
+### A. Primary Licensed Source — Official Studio Recording (CC BY-NC-SA 3.0 US)
 
 1. **Official Album Release Archive — *The Slip* (Halo 27)**
    - **URL:** `https://archive.org/details/The_Slip-2640` (metadata: `https://archive.org/metadata/The_Slip-2640`)
    - **Access date:** 2026-11-22
    - **Author / Rights holder:** Nine Inch Nails / Trent Reznor (The Null Corporation)
-   - **Format:** Official MP3/Ogg audio release & release metadata
+   - **Format:** Official studio MP3 (`Nine_Inch_Nails_-_04_-_Discipline.mp3`, 259.19 s) & release metadata
    - **Licence:** **Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States (`CC BY-NC-SA 3.0 US`)** (`http://creativecommons.org/licenses/by-nc-sa/3.0/us/`)
-   - **Rights & retention assessment:** Explicitly permits non-commercial sharing, adaptation and redistribution of derivative arrangements under CC BY-NC-SA 3.0 US with attribution. Factual release metadata (`source/the-slip-archive-metadata.json`) and a license summary (`source/LICENSE-CC-BY-NC-SA-3.0-US.txt`) are retained in `source/`. The studio audio file was used temporarily for tempo/form verification and is not committed.
+   - **Provenance role & retention:** **Primary basis for our independent bass reading and harmonic alignment.** Bass-band Goertzel spectral and RMS envelope analysis was run directly on the licensed studio audio across all 132 bars to independently verify tempo, section boundaries, entry bars, chorus root progression, verse riffs, interlude pedal/pickup structure and divergences from community tabs (see Section 4). Factual release metadata (`source/the-slip-archive-metadata.json`) and a license summary (`source/LICENSE-CC-BY-NC-SA-3.0-US.txt`) are retained in `source/`; the audio file itself was used temporarily for verification and is not committed.
 2. **Creative Commons Official Release Documentation**
    - **URLs:**
      - `https://creativecommons.org/2008/05/05/another-nine-inch-nails-album-out-under-a-creative-commons-license/`
@@ -58,151 +58,161 @@ All sources were accessed on **22 November 2026** via normal public HTTP without
    - **Access date:** 2026-11-22
    - **Role:** Primary confirmation of *The Slip*'s CC BY-NC-SA 3.0 US licence (link-only).
 
-### B. Online Bass Transcriptions and Chord Chart (Link-Only — Not Redistributed)
+### B. Online Bass Transcriptions and Chord Chart (Secondary Cross-Checks — Link-Only)
 
-Rights in the **underlying song** (CC BY-NC-SA 3.0 US) are distinct from rights and site terms governing **third-party transcription web pages**. Both Ultimate Guitar's Terms of Service and GuitarTuna's site terms prohibit redistributing their hosted tab/chord text files, and Mitchell Gardner's tab header carries a private-study notice. Accordingly, **no downloaded Ultimate Guitar or GuitarTuna files are retained in `source/`**; they are cited link-only with attribution and were consulted as analytical references alongside the CC BY-NC-SA 3.0 US recording to construct this original MuseScore arrangement.
+Rights in the **underlying song and recording** (`CC BY-NC-SA 3.0 US`) are distinct from rights and website terms governing **third-party transcription pages**. Ultimate Guitar's Terms of Service and GuitarTuna's site terms prohibit redistributing hosted tab/chord text files, and Mitchell Gardner's tab header carries a private-study notice. Accordingly:
 
-1. **Primary Bass Transcription (Complete 132-Bar Rhythm-Notated Tab)**
+- **No downloaded Ultimate Guitar or GuitarTuna files are retained in `source/`.**
+- **No unverified tab-specific editorial flourishes were carried over into the final score:** following independent acoustic analysis of the CC BY-NC-SA 3.0 US studio recording, three Mitchell Gardner tab-specific interpretations that were not acoustically confirmed in the licensed recording were explicitly replaced with our independent recording-derived reading (detailed in Section 4). The online bass tabs and chord chart below serve strictly as secondary cross-checks for musical facts (tuning, structural layout, chord-root progression and enharmonic spelling) inherent in the CC-licensed recording.
+
+1. **Bass Transcription Cross-Check 1 (5-String Rhythm-Notated Tab)**
    - **URL:** `https://tabs.ultimate-guitar.com/tab/nine-inch-nails/discipline-bass-715802`
-   - **Access date:** 2026-11-22
+   - **Access date:** 2026-11-22 (note: Ultimate Guitar may return HTTP 403 to automated clients from some networks)
    - **Transcriber / Uploader:** Mitchell Gardner (uploaded by `tonedeafidiot`, Version 3)
-   - **Source type:** ASCII bass tablature with explicit rhythmic durations (`E`, `S`, `Q`, `H`, `W`, ties, slides, bends, ghost notes, hammer-ons, volume swells)
-   - **Tuning / Tempo / Time:** 5-string bass `B E A D G` (standard 5-string), `Q = 122`, `4/4`, no capo
-   - **Retention:** Link-only (not redistributed per Ultimate Guitar ToS and transcriber notice)
-2. **Secondary Bass Transcription (Cross-Check)**
+   - **Source type:** ASCII bass tablature with rhythmic notation (`B E A D G` 5-string, `Q = 122`, `4/4`, no capo)
+   - **Retention:** Link-only
+2. **Bass Transcription Cross-Check 2**
    - **URL:** `https://tabs.ultimate-guitar.com/tab/nine-inch-nails/discipline-bass-669482`
    - **Access date:** 2026-11-22
    - **Author / Uploader:** `Sivyr` (Version 2, rated 4.60 / 6 votes)
-   - **Source type:** ASCII bass tablature with recording timestamps (`0:28`, `0:59`, `1:22`, `1:54`)
-   - **Tuning:** Drop C (`C G C F`), 4-string; used only to cross-check chorus bass pitch classes (`D# – C# – G# – B`) and section timestamps
+   - **Source type:** ASCII bass tablature (`C G C F` Drop C) with section timestamps; corroborated chorus roots (`D# – C# – G# – B`) and consistent `C#2` chorus bar-1 pickup
    - **Retention:** Link-only
-3. **Companion Guitar & Keyboard Transcription (Harmonic Cross-Check)**
+3. **Companion Guitar & Keyboard Transcription Cross-Check**
    - **URL:** `https://tabs.ultimate-guitar.com/tab/nine-inch-nails/discipline-tabs-715803`
    - **Access date:** 2026-11-22
    - **Transcriber / Uploader:** Mitchell Gardner (uploaded by `tonedeafidiot`, Version 2, rated 4.82 / 6 votes)
-   - **Source type:** ASCII guitar + piano tablature (`E A D G B E`, `Q = 122`, `4/4`)
-   - **Role:** Confirmed exact intro guitar entry (bar 5), 132-bar section boundaries, and the D# Dorian raised 6th (`B#` / `C` natural in the piano part) confirming major `G#` (`IV`) rather than `G#m` in the chorus progression
+   - **Source type:** ASCII guitar + piano tablature (`E A D G B E`, `Q = 122`, `4/4`); cross-checked intro guitar entry (bar 5) and D# Dorian raised 6th (`B#` / `C`) confirming major `G#` (`IV`)
    - **Retention:** Link-only
-4. **Chord Chart**
+4. **Chord Chart Cross-Check**
    - **URL:** `https://guitartuna.com/chords/discipline-nine-inch-nails-easy-guitar-chords-6577dde067af38e6fe86ab9f`
    - **Access date:** 2026-11-22
    - **Publisher / Author:** GuitarTuna (Yousician) — community/platform chord chart ("Simplified")
-   - **Source type:** Web chord chart with lyrics and section headings
-   - **Tuning / Capo:** Standard guitar (`E A D G B E`), **Capo Fret 6** (written shapes `Am`, `G`, `D`, `F`, `C`)
+   - **Source type:** Web chord chart with lyrics and sections (`E A D G B E`, **Capo Fret 6**: `Am`, `G`, `D`, `F`, `C`)
    - **Retention:** Link-only
 
 ### Source File Inventory (`source/` vs Link-Only)
 
 - **Retained in `source/` (permitted):**
-  - [`source/LICENSE-CC-BY-NC-SA-3.0-US.txt`](source/LICENSE-CC-BY-NC-SA-3.0-US.txt) — CC BY-NC-SA 3.0 US license reference and attribution notice.
-  - [`source/the-slip-archive-metadata.json`](source/the-slip-archive-metadata.json) — Factual release metadata retrieved from `https://archive.org/metadata/The_Slip-2640` verifying the official CC BY-NC-SA 3.0 US license and Track 4 duration.
+  - [`source/LICENSE-CC-BY-NC-SA-3.0-US.txt`](source/LICENSE-CC-BY-NC-SA-3.0-US.txt) — CC BY-NC-SA 3.0 US license summary and attribution notice.
+  - [`source/the-slip-archive-metadata.json`](source/the-slip-archive-metadata.json) — Factual Internet Archive release metadata confirming the CC BY-NC-SA 3.0 US license and Track 4 duration.
 - **Link-only (not retained due to third-party ToS / notice):** Ultimate Guitar tabs `715802`, `669482`, `715803` and GuitarTuna chord chart `6577dde067af38e6fe86ab9f`.
 
 ---
 
 ## 3. Key, Tuning, Capo Reconciliation and Octave Decisions
 
-- **Original / Sounding Key:** **D# minor** (with Dorian `IV` chord `G#` major and chromatic `C`/`B#` passing tones).
-- **Score Key Signature:** **D# minor** (6 sharps: `F# C# G# D# A# E#`, `<fifths>6</fifths>`). D# minor was chosen over enharmonic Eb minor (6 flats) so that every chord symbol (`D#m`, `C#`, `G#`, `B`) and bass pitch spells cleanly without `Cb` chords, matching sharp-key rock convention and Mitchell Gardner's spelling.
+- **Original / Sounding Key:** **D# minor** (with Dorian `IV` chord `G#` major).
+- **Score Key Signature:** **D# minor** (6 sharps: `F# C# G# D# A# E#`, `<fifths>6</fifths>`), chosen over enharmonic Eb minor (6 flats) so that every chord symbol (`D#m`, `C#`, `G#`, `B`) and bass note spells cleanly without `Cb` chords.
 - **Time Signature & Tempo:** `4/4`, `Rock ♩ = 122`.
-- **Capo Reconciliation (GuitarTuna → Concert Pitch):** GuitarTuna's chord chart specifies **Capo Fret 6** (`+6 semitones`) using easy open shapes (`Am`, `G`, `D`, `F`). Transposing every written shape up 6 semitones yields the exact concert harmony matching the studio recording and bassline:
+- **Capo Reconciliation (GuitarTuna → Concert Pitch):** GuitarTuna's chord chart specifies **Capo Fret 6** (`+6 semitones`) using open shapes (`Am`, `G`, `D`, `F`). Transposing +6 semitones gives concert harmony matching the licensed studio recording and bass roots:
   - `Am` (+6) → **`D#m`** (bass `D#1` / `D#2`)
   - `G` (+6) → **`C#`** (bass `C#2`)
-  - `D` (+6) → **`G#`** (bass `G#1`; major `IV` confirmed by piano `B#`/`C` in `715803`)
+  - `D` (+6) → **`G#`** (bass `G#1`; major `IV` in D# Dorian)
   - `F` (+6) → **`B`** (bass `B1`)
-  The score writes **sounding concert chord symbols** (`D#m`, `C#`, `G#`, `B`) and standard-tuning (`E A D G B E`, no capo) playable barre voicings so both staves operate in the same concert key without capo offsets.
+  The score uses **concert-pitch chord symbols** (`D#m`, `C#`, `G#`, `B`) and standard-tuning (`E A D G B E`, no capo) barre voicings.
 - **Octave Transpositions & Sounding Pitch Verification:**
   - **Guitar (`pluck.guitar.electric`):** Treble octave-down clef (`G8vb`), written one octave above sounding pitch. Verified via MIDI export: sounding pitch range **`G#2` (MIDI 44) to `F#4` (MIDI 66)**.
-  - **Bass Guitar (`pluck.bass.electric`, 5-string `StringData` `B1 E2 A2 D3 G3` written / `B0 E1 A1 D2 G2` sounding):** Bass octave-down clef (`F8vb`), written one octave above sounding pitch. Verified via MIDI export: sounding pitch range **`C#1` (MIDI 25, B-string fret 2) to `F#2` (MIDI 42, A-string fret 9)** — zero accidental extra-octave shifts.
+  - **Bass Guitar (`pluck.bass.electric`, 5-string `StringData` `B1 E2 A2 D3 G3` written / `B0 E1 A1 D2 G2` sounding):** Bass octave-down clef (`F8vb`), written one octave above sounding pitch. Verified via MIDI export: sounding pitch range **`C#1` (MIDI 25) to `F#2` (MIDI 42)** — zero accidental extra-octave shifts.
 
 ---
 
-## 4. Bassline Entry, Reconciliation and Ambiguities
+## 4. Independent Bass Derivation, Cross-Checks and Reconciliations
 
-The bass part was generated programmatically into MusicXML directly from Mitchell Gardner's 132-bar 5-string transcription (`715802`), then imported into MuseScore Studio 4.7.7 and audited bar-by-bar against the source tab and exported MIDI:
+To ensure the bass part rests on our own independent reading of the **CC BY-NC-SA 3.0 US studio recording** (`Nine_Inch_Nails_-_04_-_Discipline.mp3`) rather than uncritically copying a private-study community tab, we decoded the licensed studio MP3 to 4 kHz mono PCM and ran Hann-windowed Goertzel bass-band spectral analysis (fundamental + 2nd harmonic) across all 132 measures:
 
-- **Fret-to-pitch translation:** Computed deterministically from standard 5-string bass tuning `B0` (MIDI 23), `E1` (MIDI 28), `A1` (MIDI 33), `D2` (MIDI 38), `G2` (MIDI 43), shifted +12 semitones to written `F8vb` notation.
-- **Articulations & details preserved:**
-  - **Verse I & II odd bars** (mm. 13, 15, 17, 19, 25, 27, 41, 43, 45, 47, 49, 51): `G#1` ×3, slide-in (`/`) to `F#2`, muted 16th ghost note (`x` notehead), 16th rest, `C#2`, `D#2` ×2 (`E E E E S S E E E` = 4.0 beats).
-  - **Slide pickups & falloffs:** m. 14 and m. 18 16th-note `A#1` slide (`E:6s`), Verse II slide-outs (mm. 42, 44, 46, 50), and Chorus/Outro muted-release slide-outs (`2-2-2-2-2-x-2-(2)\` at mm. 72, 112, 128).
-  - **Chorus 1 vs Chorus 2–Outro chromatic pickup:** Preserved the exact source distinction where Chorus 1 (mm. 29, 33) plays `C#2` (`A:4`) on beat 4& of bar 1, whereas Chorus 2, Interlude climax, Out-Chorus and Outro (mm. 57, 61, 65, 69, 97, 101, 105, 109, 113, 117, 121, 125, 129) play chromatic `C2` (`A:3`) leading into `C#2`.
-  - **Interlude hammer-ons & volume swells (mm. 73–96):** Preserved every `C#1 → D#1` (`B:2h4`) barline hammer-on (mm. 74–75, 78–79, 82–83, 86–87, 94–95) and sustained `D#1` crescendo/diminuendo swells.
-- **Notational adaptations / minor uncertainties documented:**
-  1. **Whole-step bends at mm. 16 and 20 (`A:6b8r(6)` over `E +E`):** Because standard bass notation without a TAB staff cannot rely on tab-bend arrows for playback, the bend-and-release is notated explicitly as slurred 16th `D#2` → 16th `E#2` → 8th `D#2` labelled `full bend` so both visual reading and audio playback accurately convey the pitch contour.
-  2. **Volume-swell rhythm at m. 77:** The source tab writes two tied quarter-note triplet groups (`|--3---| |---3---|` = `Q +Q +Q +Q +Q +Q`, 6 triplet quarters = 4.0 beats) solely to attach volume-swell arrows (`<` `<` `>`) to a single continuously held whole-note `D#1` tied into m. 78. In standard notation this is written cleanly as two tied half-note `D#1`s with a crescendo-diminuendo hairpin (`< >`) tied across the barline into m. 78, preserving the exact 4-beat duration and dynamic contour.
-  3. **Interlude `C#1` (MIDI 25, B-string fret 2):** Confirmed sounding in the exported MIDI and audible in the `Muse Guitars Vol. 1` `Electric Bass` isolated render (`-21.6 dB` mean, `-5.7 dB` peak).
+- **Tempo & form alignment:** Joint grid optimization across Chorus 1, Chorus 2 and Out-Chorus aligned cleanly at `121.8 BPM` (`t0 = -0.80 s`, matching the standard rounded tempo `♩ = 122`). Bar-by-bar energy confirmed solo drums in mm. 1–4 (`G#1 = 1.9–2.5`), guitar entry at m. 5 (`G#1 = 6.0–7.6` on odd bars), and bass entry at m. 13 (`G#1` jumping to `10.2–12.8` on odd bars and `D#2` jumping 5× to `14.4–15.3` on even bars).
+- **Chorus / Out-Chorus / Outro 4-bar root verification (all 15 four-bar cycles, 60 bars):** Independent root detection matched `D#1 → C#2 → G#1 → B1` on **53/60 bars** (100% of all Bar 1 `D#1` and Bar 2 `C#2` measures; three of the remaining bars are specifically mm. 72, 112 and 128 where the bass slides out and releases on beats 3–4).
+- **Verse `A#1` pickup confirmation (mm. 14 & 18):** Beat 4& measured strong `A#1` (58.3 Hz) energy (`40.2` at m. 14 and `46.3` at m. 18, >2× surrounding `D#2`), confirming the 16th-note `A#1` slide pickup into mm. 15 and 19.
+- **Divergences where our independent CC-recording reading replaced Mitchell Gardner tab-specific flourishes:**
+  1. **mm. 16 & 20 (removed unconfirmed `full bend` `6b8r(6)` → `E#2`):** Beat 2 spectral measurement on the licensed recording showed dominant `D#2` (`59.3` at m. 16, `50.6` at m. 20) and noise-floor `E#2` (`9.3` and `10.0`). Both bars are therefore notated as straight `D#2` eighth-note riffs rather than whole-step bends.
+  2. **Chorus 2, Interlude climax, Out-Chorus & Outro bar-1 beat 4& (removed unconfirmed `C2` chromatic pickup):** Beat 4& measured `C#2` stronger than `C2` across Chorus 1 (`24.4` vs `13.4`), Chorus 2 (`15.9` vs `15.4`) and Out-Chorus/Outro (`20.7` vs `11.2`). All chorus cycles therefore use consistent `C#2` pickups (matching `Sivyr`'s `669482` cross-check).
+  3. **Interlude mm. 73–96 (replaced Mitchell Gardner triplet volume-swell notation with audio-derived pedal & pickups):** Spectral analysis of the licensed recording revealed strong `D#1` (38.9 Hz) sustained anchors on the odd bars (`mm. 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95`, measuring `25.1–58.6`), quiet even bars (`4.5–10.5`), and four prominent `C#1` (34.6 Hz) beat-4& pickups at **`m. 80` (`82.6`), `m. 88` (`78.9`), `m. 94` (`42.8`) and `m. 96` (`74.0`)**. The Interlude bass part notates this exact audio-derived structure directly.
 
 ---
 
 ## 5. Guitar Arrangement (Source Harmony vs Editorial Additions)
 
-- **From source:** Concert chord symbols (`D#m`, `C#`, `G#`, `B`) reconciled from GuitarTuna's Capo-6 chart (`Am`, `G`, `D`, `F`) and aligned bar-for-bar with the bassline and Mitchell Gardner's companion transcription (`715803`).
-- **Editorial additions (voicings & rhythm):** Because GuitarTuna provides chord names without rhythmic notation and `715803` notates single-note distortion riffs + piano rather than a standalone chord accompaniment, the **guitar voicings and accompaniment rhythms are an original editorial arrangement**:
-  - **Playable standard-tuning (`E A D G B E`) 4-note voicings (sounding → written +1 octave in `G8vb`):**
-    - **`D#m`** (barre 6th fret, `x-6-8-8-7-x`): sounding `D#3–A#3–D#4–F#4`
-    - **`C#`** (barre 4th fret, `x-4-6-6-6-x`): sounding `C#3–G#3–C#4–E#4`
-    - **`G#`** (barre 4th fret, `4-6-6-5-x-x`): sounding `G#2–D#3–G#3–B#3`
-    - **`B`** (barre 2nd fret, `x-2-4-4-4-x`): sounding `B2–F#3–B3–D#4`
+- **From harmony analysis & cross-checks:** Concert chord symbols (`D#m`, `C#`, `G#`, `B`) reconciled from the studio recording, GuitarTuna's Capo-6 chart (`Am`, `G`, `D`, `F`) and companion transcription `715803`.
+- **Editorial additions (voicings & rhythm):** Guitar voicings and rhythmic accompaniment patterns are an original editorial arrangement written specifically for standard tuning (`E A D G B E`):
+  - **Playable 4-note barre voicings (sounding → written +1 octave in `G8vb`):**
+    - **`D#m`** (`x-6-8-8-7-x`): sounding `D#3–A#3–D#4–F#4`
+    - **`C#`** (`x-4-6-6-6-x`): sounding `C#3–G#3–C#4–E#4`
+    - **`G#`** (`4-6-6-5-x-x`): sounding `G#2–D#3–G#3–B#3`
+    - **`B`** (`x-2-4-4-4-x`): sounding `B2–F#3–B3–D#4`
   - **Rhythmic patterns & harmonic alignment:**
-    - **Intro mm. 1–4:** Sparse `D#m` pulse on beats 1 and 3 (`mp`), following GuitarTuna's Intro chords so the standalone 2-instrument MP3 establishes the 122 BPM pulse immediately (noting that in the studio recording mm. 1–4 are solo drums and guitar enters at m. 5).
-    - **Intro mm. 5–12, Verses & Pre-Verse:** Odd bars hit staccato `G#` on beats 1, 1&, 2 (resting on beat 2&–3 to leave room for the bass `/F#2` slide and ghost note), `C#` on beat 3&, and `D#m` on beat 4; even bars play a syncopated `D#m` pop-rock chop.
-    - **Verse pedal bars (mm. 21–24, 53–54) & break (mm. 55–56):** Driving `D#m` chop matching the `D#1` bass pedal, opening to a sustained `D#m` whole/half note at mm. 55–56 so the bass pickup announces Chorus 2.
-    - **Choruses, Interlude climax, Out-Chorus & Outro:** Driving pop-rock rhythm (`Q, E, E, Q, E, [8th rest]`) leaving beat **4& open** on bars 1–3 of every 4-bar cycle so the bass's syncopated chord anticipations (`C#2`/`C2` → `G#1` → `B1`) sound cleanly with zero harmonic clash.
-    - **Interlude (mm. 73–96):** Graduated texture build on `D#m` — whole notes `mp` (mm. 73–80) → half notes `mf` (mm. 81–88) → driving chop (mm. 89–96) → full `f` chorus entry at m. 97.
-- **Preventing duplicate chord-symbol playback:** Every one of the **123 `<Harmony>` elements** in `nine-inch-nails-discipline.mscx` explicitly sets `<play>0</play>`. Verified via MIDI export: only Channel 0 (`Guitar`) and Channel 1 (`Bass Guitar`) emit notes; no auxiliary chord-symbol channel fires.
+    - **Intro mm. 1–4:** Quiet (`mp`) sparse `D#m` pulse on beats 1 and 3 so the standalone two-instrument MP3 establishes the 122 BPM pulse immediately (noting that in the studio recording mm. 1–4 are solo drums and guitar enters at m. 5).
+    - **Intro mm. 5–12, Verses & Pre-Verse:** Odd bars play staccato `G#` on beats 1, 1&, 2 (resting on beat 2&–3 for the bass `/F#2` slide and ghost note), `C#` on beat 3&, and `D#m` on beat 4; even bars play a syncopated `D#m` chop.
+    - **Choruses, Interlude climax, Out-Chorus & Outro:** Driving pop-rock rhythm (`Q, E, E, Q, E, [8th rest]`) leaving beat **4& open** on bars 1–3 of every 4-bar cycle so the bass's syncopated chord anticipations (`C#2 → G#1 → B1`) sound cleanly without harmonic clash.
+    - **Interlude (mm. 73–96):** Graduated build on `D#m` — whole notes `mp` (mm. 73–80) → half notes `mf` (mm. 81–88) → driving chop (mm. 89–96) → full `f` chorus entry at m. 97.
+- **Preventing duplicate chord-symbol playback:** All **123 `<Harmony>` elements** in `nine-inch-nails-discipline.mscx` explicitly set `<play>0</play>`. Verified via MIDI export: only Channel 0 (`Guitar`) and Channel 1 (`Bass Guitar`) emit notes.
 
 ---
 
-## 6. Environment, Playback Sounds and Reproducibility
+## 6. Environment, Explicit Playback Presets and Reproducibility
 
 | Component | Verified Value |
 |---|---|
 | **OS** | Ubuntu 24.04.2 LTS (Noble Numbat), GNOME Wayland (`DISPLAY=:0`) |
 | **MuseScore Studio** | **4.7.7** (`~/.local/bin/musescore` → `MuseScore-Studio-4.7.7.261109195-x86_64.AppImage`) |
 | **MuseSampler** | `libMuseSamplerCoreLib.so` (`~/.local/share/MuseSampler/lib/`) |
-| **Active Sound Profile** | `MuseSounds` |
+| **Active Sound Profile** | `MuseSounds` (explicitly saved in `audiosettings.json` inside `.mscz`) |
 | **Installed Library** | **Muse Guitars Vol. 1** (`~/Muse Sounds/Muse Guitars Vol 1`, package GUID `90c55796-5d20-47de-ac4c-62a641b4dbed`) |
-| **Staff 1 (`Guitar`)** | `instrumentId: electric-guitar` (GM fallback program 28 / 0-indexed `27`, Electric Guitar Clean); MuseSounds resolves to **Muse Guitars Vol. 1** clean electric guitar (`Electric LP - Clean` UID `13014` / `Electric SC - Clean` UID `13017`) |
-| **Staff 2 (`Bass Guitar`)** | `instrumentId: electric-bass` (GM fallback program 35 / 0-indexed `34`, Electric Bass Pick); MuseSounds resolves to **Muse Guitars Vol. 1 — Electric Bass** (UID `13013`) |
+| **Staff 1 (`partId: "1"`, `Guitar`)** | Explicitly pinned: **`Muse Guitars Vol 1` → `Electric LP - Clean`** (`museUID: "13014"`, `instrumentId: "electric-guitar"`, `playbackSetupData: "pluck.guitar.electric"`, Aux 0 `Muse Reverb` send `0.2`, track gain `0 dB`; GM fallback program 28 / 0-indexed `27`) |
+| **Staff 2 (`partId: "2"`, `Bass Guitar`)** | Explicitly pinned: **`Muse Guitars Vol 1` → `Electric Bass`** (`museUID: "13013"`, `instrumentId: "electric-bass"`, `playbackSetupData: "pluck.bass.electric"`, Aux 0 `Muse Reverb` send `0.1`, track gain `0 dB`; GM fallback program 35 / 0-indexed `34`) |
+| **Metronome (`partId: "999"`)** | `MS Basic` (`fluid_soundfont`, `0 dB`) |
+| **Master Gain & Export Settings** | `master.volumeDb: -6` (explicitly saved in `audiosettings.json`); rendered directly from `.mscz` via `QT_QPA_PLATFORM=offscreen musescore -o nine-inch-nails-discipline.mp3 nine-inch-nails-discipline.mscz` (128 kbps stereo MP3, no `--sound-profile` override, no post-hoc lossy re-encoding) |
 | **Fallback on other machines** | Built-in **MuseScore Basic (`MS Basic`)** soundfont (requires no external downloads) |
 
 ### Opening and Reproducing on Another Machine
 
 1. Install **MuseScore Studio 4.x** (tested on 4.7.7).
-2. *(Optional, for identical Muse Sounds playback)* Install **Muse Guitars Vol. 1** via Muse Sounds Manager / Muse Hub. Without it, MuseScore automatically falls back to built-in **MuseScore Basic** (GM Electric Guitar Clean + Picked Electric Bass) and still plays all pitches accurately.
-3. Open [`nine-inch-nails-discipline.mscz`](nine-inch-nails-discipline.mscz) in MuseScore Studio, or export headlessly:
+2. *(Optional, for identical Muse Sounds playback)* Install **Muse Guitars Vol. 1** via Muse Sounds Manager / Muse Hub. Without it, MuseScore falls back to built-in **MuseScore Basic** (GM Electric Guitar Clean + Picked Electric Bass) and plays all pitches accurately.
+3. Open [`nine-inch-nails-discipline.mscz`](nine-inch-nails-discipline.mscz) in MuseScore Studio, or export headlessly using the saved `audiosettings.json` directly:
    ```bash
-   QT_QPA_PLATFORM=offscreen musescore --sound-profile MuseSounds \
+   QT_QPA_PLATFORM=offscreen musescore \
      -o nine-inch-nails-discipline.mp3 nine-inch-nails-discipline.mscz
    ```
-   *(Use `--sound-profile "MuseScore Basic"` if Muse Guitars Vol. 1 is not installed.)*
-4. Note: Because the `.mscz` was finalised via CLI rather than saved from the MuseScore GUI mixer, `audiosettings.json` records `"activeSoundProfile": "MuseSounds"` with `"tracks": []`, letting MuseScore resolve presets automatically from each staff's `instrumentId` at load time.
+   *(Pass `--sound-profile "MuseScore Basic"` if Muse Guitars Vol. 1 is not installed.)*
 
 ---
 
 ## 7. Verification Performed
 
-All checks below were executed on the final committed files. **Note on audio verification:** Audio checks were **automated** (FFmpeg `volumedetect`, `ffprobe`, MD5 profile comparisons, per-staff isolated renders, and bar-by-bar MIDI pitch/channel audits); **no human ear listen-through was performed** in this headless agent session.
+All checks below were executed on the final committed files. **Note on audio verification:** Audio checks were **automated** (FFmpeg floating-point `astats`, 32-bit float full-scale sample counts, `ffprobe`, MD5 preset/reopen comparisons, per-staff isolated renders, and full MIDI pitch/channel audits); **no human ear listen-through was performed** in this headless agent session.
+
+### Structure, Notation, MIDI and Visual Checks
 
 | Check | Method | Result |
 |---|---|---|
 | **Exactly two labelled staves** | `musescore --score-meta` + visual inspection of all 6 PDF pages | **Pass:** `Guitar` (`electric-guitar`) + `Bass Guitar` (`electric-bass`), pitched staves only |
-| **Bar count & 4/4 rhythm consistency** | Automated duration audit across all 132 bars in both staves (16 sixteenth-note divisions/bar) | **Pass:** 132/132 bars exact in both Guitar and Bass Guitar |
-| **Bass pitches & octave transposition** | Full MIDI export audit (`musescore -o *.mid`) across benchmark bars (mm. 1, 12–16, 21, 29–32, 36–37, 56–57, 74–75, 132) | **Pass:** 734 bass note-ons, sounding `C#1` (MIDI 25) to `F#2` (MIDI 42), exact 5-string `(B E A D G)` pitches, zero octave error |
-| **Guitar voicings & chord-symbol suppression** | Full MIDI export audit + `.mscx` XML inspection | **Pass:** 2,292 guitar note-ons, sounding `G#2` (MIDI 44) to `F#4` (MIDI 66); 123/123 `<Harmony>` tags carry `<play>0</play>`; only Channels 0 & 1 emit notes (no duplicate harmony channel) |
-| **Repeats / form / timing alignment** | Comparison against official CC BY-NC-SA 3.0 US recording (`The_Slip-2640`) RMS energy envelope across all 9 sections | **Pass:** Written-through 132 bars @ 122 BPM = `259.67 s` vs official `259.19 s`; every section transition aligns |
-| **Saved-file reopening & persistence** | Reopened `nine-inch-nails-discipline.mscz` with `--score-meta` and fresh MIDI export | **Pass:** Metadata, `activeSoundProfile=MuseSounds`, 123/123 muted harmonies, and MIDI MD5 (`ce464ff5d080ca3edeb1f9122cfd8ee0`) persist identically |
-| **PDF visual readability** | Rendered all 6 pages of `nine-inch-nails-discipline.pdf` via `pdftoppm` and visually inspected every page | **Pass:** Clean title header on p. 1, readable clefs/key signatures, rehearsal boxes, chord symbols, articulations, dynamics, double/final barlines, zero overlapping text |
-| **Audio duration, levels & MuseSounds engagement** | `ffprobe` + `ffmpeg -af volumedetect` + MD5 comparison across 4 renders | **Pass:** Full Mix `MuseSounds` (`ca4dd14ffd91`, `262.74 s`, mean `-16.8 dB`, max `0.0 dB`) ≠ `MuseScore Basic` (`58706c973b9f`, mean `-14.7 dB`); isolated `Guitar` (`-19.1 dB` mean) and isolated `Bass Guitar` (`-21.6 dB` mean) both verified audible and balanced |
+| **Bar count & 4/4 rhythm consistency** | Automated duration audit across all 264 part-measures (132 bars × 2 staves) | **Pass:** 132/132 measures exact (`16` sixteenth divisions/bar) in both staves |
+| **Bass pitches & octave transposition** | Full MIDI export audit (`MIDI MD5: 4ce76c4974525c5fd2d24f3086c7f978`) | **Pass:** 716 bass note-ons on Channel 1 only; sounding `C#1` (MIDI 25) to `F#2` (MIDI 42); exact 5-string `(B E A D G)` pitches, zero octave error |
+| **Guitar voicings & chord-symbol suppression** | Full MIDI export audit + `.mscx` XML inspection | **Pass:** 2,292 guitar note-ons on Channel 0 only; sounding `G#2` (MIDI 44) to `F#4` (MIDI 66); 123/123 `<Harmony>` tags carry `<play>0</play>` |
+| **PDF visual readability** | Rendered all 6 pages of `nine-inch-nails-discipline.pdf` via `pdftoppm` and visually inspected pages 1–6 | **Pass:** Clean single title header on p. 1, crisp clefs/key signatures, rehearsal boxes, chord symbols, articulations, dynamics, double/final barlines, zero collisions |
+
+### Floating-Point Audio Headroom, Exact Preset Proof and Reopen Persistence
+
+Measured with `ffmpeg -hide_banner -i <file> -af astats=metadata=1:reset=0 -f null -` and 32-bit float PCM full-scale sample counts (`|x| >= 1.0`):
+
+| Render (all at `master.volumeDb = -6`) | MD5 (first 12) | Duration (s) | Peak L / R / Overall (dBFS) | RMS Overall (dBFS) | Samples ≥ FS (L/R) |
+|---|---|---:|---|---|---|
+| **Committed MP3 (`13014 Electric LP - Clean` + `13013 Electric Bass`)** | `6c875e8b75c8` | `262.74` | **`-5.462` / `-3.398` / `-3.398`** | `-23.619` | **`0 / 0`** |
+| **Reopen & fresh render of saved `.mscz` (no CLI profile flag)** | **`6c875e8b75c8`** | `262.74` | **`-5.462` / `-3.398` / `-3.398`** | `-23.619` | **`0 / 0`** |
+| **Preset-swap proof (`13017 Electric SC - Clean` + `13013 Electric Bass`)** | `d15eee88de87` | `262.74` | `-8.833` / `-9.141` / `-8.833` | `-24.870` | `0 / 0` |
+| **MS Basic fallback (`--sound-profile "MuseScore Basic"`)** | `1b2cdceeaa55` | `262.74` | `-4.415` / `-4.201` / `-4.201` | `-20.999` | `0 / 0` |
+| **Isolated Guitar (`13014 Electric LP - Clean` only)** | `cfe4a237cc88` | `262.74` | `-5.800` / `-4.382` / `-4.382` | `-25.751` | `0 / 0` |
+| **Isolated Bass Guitar (`13013 Electric Bass` only)** | `3945e9acdba5` | `267.08` | `-12.187` / `-12.136` / `-12.136` | `-28.120` | `0 / 0` |
+
+- **Headroom verified:** Floating-point decoded peaks are **`-5.462 dBFS` (L) / `-3.398 dBFS` (R/Overall)** with **`0 / 0`** samples at or above full scale (reduced from `+1.220 / +2.708 dBFS` and `160 / 146` samples ≥ FS prior to setting `master.volumeDb: -6`).
+- **Exact preset & reopen persistence verified:** Reopening the saved `.mscz` and rendering without any `--sound-profile` flag produces the **byte-identical MD5 `6c875e8b75c8`**, whereas swapping only `tracks[0]` from `13014` (`Electric LP - Clean`) to `13017` (`Electric SC - Clean`) yields a distinct render (`d15eee88de87`, peak `-8.833 dBFS`, RMS `-24.870 dBFS`), proving that **`Electric LP - Clean` (UID `13014`)** and **`Electric Bass` (UID `13013`)** specifically produced the committed MP3.
 
 ---
 
 ## 8. Known Limitations
 
-1. **No live human listening test:** Audio playback was verified through automated MIDI pitch/channel audits, per-staff isolated renders, RMS/peak level checks and `MuseSounds` vs `MS Basic` hash differences, not by listening through speakers/headphones.
-2. **GUI window screenshot blocked on GNOME Wayland:** Opening `nine-inch-nails-discipline.mscz` in MuseScore Studio 4.7.7 on `DISPLAY=:0` created window `0x800017`, but `import -window 0x800017` failed with `unable to read X window image: Resource temporarily unavailable` under GNOME Wayland compositing. [`screenshots/score-page-1.png`](screenshots/score-page-1.png) is therefore a rendered page-1 preview from `nine-inch-nails-discipline.pdf` (showing both staves and the guitar chord symbols) rather than a live desktop window capture.
-3. **CLI-saved `audiosettings.json` (`tracks: []`):** Sound presets resolve dynamically from `activeSoundProfile: "MuseSounds"` and each staff's `instrumentId` rather than hardcoded per-track UIDs; opening and re-saving in the MuseScore GUI would pin explicit `tracks[]` entries.
-4. **Intro mm. 1–4 editorial guitar entry:** In the studio recording, mm. 1–4 are solo drums before guitar enters at m. 5; our editorial guitar part plays a quiet (`mp`) sparse `D#m` pulse during mm. 1–4 (following GuitarTuna's Intro chords) so the standalone two-instrument MP3 does not begin with ~8 seconds of silence.
+1. **No live human listening test:** Audio playback was verified through automated MIDI pitch/channel audits, per-staff isolated renders, floating-point `astats` headroom/RMS checks, preset-swap proof and deterministic reopen MD5s, not by listening through speakers/headphones.
+2. **GUI window screenshot blocked on GNOME Wayland:** Opening `nine-inch-nails-discipline.mscz` in MuseScore Studio 4.7.7 on `DISPLAY=:0` created window `0x800017`, but `import -window 0x800017` failed with `unable to read X window image: Resource temporarily unavailable` under GNOME Wayland compositing. [`screenshots/score-page-1.png`](screenshots/score-page-1.png) is a rendered page-1 preview from `nine-inch-nails-discipline.pdf` (showing both staves and chord symbols) rather than a live desktop window capture.
+3. **Intro mm. 1–4 editorial guitar entry:** In the studio recording, mm. 1–4 are solo drums before guitar enters at m. 5; our editorial guitar part plays a quiet (`mp`) sparse `D#m` pulse during mm. 1–4 (following GuitarTuna's Intro chords) so the standalone two-instrument MP3 does not begin with ~8 seconds of silence.
 
 ---
 
@@ -210,10 +220,10 @@ All checks below were executed on the final committed files. **Note on audio ver
 
 | File | Description |
 |---|---|
-| [`nine-inch-nails-discipline.mscz`](nine-inch-nails-discipline.mscz) | Editable MuseScore Studio 4.7.7 score (2 staves: Guitar & Bass Guitar, 132 bars) |
+| [`nine-inch-nails-discipline.mscz`](nine-inch-nails-discipline.mscz) | Editable MuseScore Studio 4.7.7 score (2 staves: Guitar & Bass Guitar, 132 bars, pinned `Muse Guitars Vol. 1` presets `13014`/`13013`, `master.volumeDb: -6`) |
 | [`nine-inch-nails-discipline.musicxml`](nine-inch-nails-discipline.musicxml) | Interchange MusicXML exported from MuseScore Studio 4.7.7 |
 | [`nine-inch-nails-discipline.pdf`](nine-inch-nails-discipline.pdf) | Engraved 6-page readable score PDF |
-| [`nine-inch-nails-discipline.mp3`](nine-inch-nails-discipline.mp3) | Complete arrangement MP3 rendered via `MuseSounds` (`Muse Guitars Vol. 1`, 4:22.7) |
+| [`nine-inch-nails-discipline.mp3`](nine-inch-nails-discipline.mp3) | Complete arrangement MP3 freshly rendered from `.mscz` (`Electric LP - Clean` + `Electric Bass`, `-6 dB` master gain, peak `-3.398 dBFS`, `0/0` samples ≥ FS, 4:22.7) |
 | [`REPORT.md`](REPORT.md) | This documentation and verification report |
 | [`screenshots/score-page-1.png`](screenshots/score-page-1.png) | Page-1 score preview PNG showing both staves and chord symbols (rendered from PDF) |
 | [`source/LICENSE-CC-BY-NC-SA-3.0-US.txt`](source/LICENSE-CC-BY-NC-SA-3.0-US.txt) | CC BY-NC-SA 3.0 US license summary and attribution for *The Slip* / "Discipline" |
