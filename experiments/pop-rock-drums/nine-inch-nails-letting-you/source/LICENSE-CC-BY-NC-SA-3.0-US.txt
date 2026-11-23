@@ -1,0 +1,28 @@
+Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States (CC BY-NC-SA 3.0 US)
+===========================================================================================
+
+Canonical license URL: https://creativecommons.org/licenses/by-nc-sa/3.0/us/
+Legal code URL:        https://creativecommons.org/licenses/by-nc-sa/3.0/us/legalcode
+
+Attribution for the underlying musical work:
+- Song:       "Letting You" (Track 3 of the album *The Slip*, Halo 27)
+- Artist:     Nine Inch Nails
+- Songwriter: Trent Reznor (Words & Music)
+- Release:    May 5, 2008 (The Null Corporation)
+- Official open-licensed release archive: https://archive.org/details/The_Slip-2640
+- Creative Commons announcement:
+  https://creativecommons.org/2008/05/05/another-nine-inch-nails-album-out-under-a-creative-commons-license/
+
+Summary of terms (human-readable deed; consult legal code above for full terms):
+- Share: copy and redistribute the material in any medium or format.
+- Adapt: remix, transform, and build upon the material.
+- Attribution: you must give appropriate credit, provide a link to the license,
+  and indicate if changes were made.
+- NonCommercial: you may not use the material for commercial purposes.
+- ShareAlike: if you remix, transform, or build upon the material, you must
+  distribute your contributions under the same license as the original.
+
+This single-staff Drumset MuseScore transcription (`.mscz`, `.musicxml`, `.pdf`,
+`.mp3`) is a non-commercial derivative work shared under the same CC BY-NC-SA 3.0 US
+license. Third-party tablature websites consulted as secondary cross-checks (tTabs)
+are NOT redistributed here and remain link-only with attribution in `REPORT.md`.
